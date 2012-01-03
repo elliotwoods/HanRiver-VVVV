@@ -1,0 +1,171 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
+   <PATCH nodename="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical.v4p" filename="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical.v4p" systemname="2.2. Spherical">
+   <BOUNDS height="8130" left="8250" top="3420" type="Window" width="9000">
+   </BOUNDS>
+   <NODE componentmode="Hidden" id="8" nodename="Group (EX9)" systemname="Group (EX9)">
+   <BOUNDS height="100" left="840" top="6435" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="9" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="825" top="240" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="720" left="825" top="240" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="3" values="4,2,2">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN encoded="0" pinname="Default" slicecount="1" values="|0, 0, 0|">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="WHD">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="2">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="m">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" filename="" id="13" nodename="IOBox (String)" systemname="Renderer (GDI)">
+   <BOUNDS height="270" left="2610" top="3000" type="Node" width="7065">
+   </BOUNDS>
+   <BOUNDS height="2835" left="2610" top="3000" type="Box" width="5820">
+   </BOUNDS>
+   <BOUNDS height="4500" left="11040" top="5580" type="Window" width="6000">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Input String" visible="0">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid">
+   </PIN>
+   <PIN pinname="String Type">
+   </PIN>
+   <PIN pinname="Viewport Matrix Transformation" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" filename="2.2. Spherical\2.2.1 - Wire positions preview.v4p" id="14" nodename="2.2. Spherical\2.2.1 - Wire positions preview.v4p" systemname="2.2.1 - Wire positions preview" path="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\">
+   <BOUNDS height="270" left="825" top="2565" type="Node" width="3615">
+   </BOUNDS>
+   <BOUNDS height="8595" left="7290" top="4290" type="Window" width="16110">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   <PIN pinname="WHD" visible="1">
+   </PIN>
+   <PIN pinname="DX9 Layer" visible="1">
+   </PIN>
+   <PIN pinname="GDI Layer" visible="1">
+   </PIN>
+   <PIN pinname="XZ" visible="1">
+   </PIN>
+   <PIN pinname="Box iLine,Y" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="13" dstpinname="Viewport Matrix Transformation" linkstyle="VHV" srcnodeid="14" srcpinname="Transform Out">
+   <LINKPOINT x="4130" y="2903">
+   </LINKPOINT>
+   <LINKPOINT x="5740" y="2903">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" filename="2.2. Spherical\2.2.2 - Renderer.v4p" id="15" nodename="2.2. Spherical\2.2.2 - Renderer.v4p" systemname="2.2.2 - Renderer" path="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\">
+   <BOUNDS height="100" left="840" top="6930" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <BOUNDS height="8550" left="12375" top="4305" type="Window" width="8295">
+   </BOUNDS>
+   </NODE>
+   <LINK dstnodeid="15" dstpinname="Layers" srcnodeid="8" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="Hidden" filename="2.2. Spherical\Arrangements\A. Gaussian.v4p" id="16" nodename="2.2. Spherical\Arrangements\A. Gaussian.v4p" systemname="A. Gaussian" path="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\Arrangements\">
+   <BOUNDS height="270" left="810" top="1710" type="Node" width="3615">
+   </BOUNDS>
+   <BOUNDS height="12375" left="11550" top="1695" type="Window" width="7005">
+   </BOUNDS>
+   <PIN pinname="WHD" visible="1">
+   </PIN>
+   <PIN pinname="Element count">
+   </PIN>
+   <PIN pinname="Seed">
+   </PIN>
+   <PIN pinname="Line X,Z" visible="1">
+   </PIN>
+   <PIN pinname="Box iLine,Y" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="16" dstpinname="WHD" srcnodeid="9" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="17" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="4395" top="660" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="4395" top="660" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="10000">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Element count|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="16" dstpinname="Element count" linkstyle="VHV" srcnodeid="17" srcpinname="Y Output Value">
+   <LINKPOINT x="4350" y="885">
+   </LINKPOINT>
+   <LINKPOINT x="3165" y="885">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="InABox" id="18" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="2025" top="660" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="2025" top="660" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Seed">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="16" dstpinname="Seed" linkstyle="VHV" srcnodeid="18" srcpinname="Y Output Value">
+   <LINKPOINT x="1980" y="885">
+   </LINKPOINT>
+   <LINKPOINT x="1575" y="885">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="14" dstpinname="WHD" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="9" srcpinname="Y Output Value">
+   <LINKPOINT x="885" y="1748">
+   </LINKPOINT>
+   <LINKPOINT x="2595" y="1748">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="8" dstpinname="Layer 1" srcnodeid="14" srcpinname="DX9 Layer">
+   </LINK>
+   <LINK dstnodeid="13" dstpinname="Layers" srcnodeid="14" srcpinname="GDI Layer">
+   </LINK>
+   <LINK dstnodeid="14" dstpinname="XZ" srcnodeid="16" srcpinname="Line X,Z">
+   </LINK>
+   <LINK dstnodeid="14" dstpinname="Box iLine,Y" srcnodeid="16" srcpinname="Box iLine,Y">
+   </LINK>
+   </PATCH>

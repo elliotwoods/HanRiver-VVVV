@@ -1,0 +1,95 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
+   <PATCH nodename="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\2.2.2 - Renderer.v4p" filename="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\2.2.2 - Renderer.v4p" systemname="2.2.2 - Renderer">
+   <BOUNDS height="8550" left="12375" top="4305" type="Window" width="8295">
+   </BOUNDS>
+   <LINK dstnodeid="2" dstpinname="Layer 1" srcnodeid="3" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="Hidden" filename="%VVVV%\lib\nodes\modules\EX9\AxisAndGrid (DX9).v4p" id="3" nodename="AxisAndGrid (DX9)" systemname="AxisAndGrid (DX9)">
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <BOUNDS height="100" left="390" top="945" type="Node" width="100">
+   </BOUNDS>
+   </NODE>
+   <NODE componentmode="Hidden" id="2" nodename="Group (EX9)" systemname="Group (EX9)">
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" slicecount="1" visible="1" values="||">
+   </PIN>
+   <BOUNDS height="100" left="390" top="1455" type="Node" width="100">
+   </BOUNDS>
+   </NODE>
+   <LINK dstnodeid="1" dstpinname="Layers" srcnodeid="2" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="FullScreen" id="1" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <BOUNDS height="100" left="690" top="1980" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="1800" left="690" top="1980" type="Box" width="2400">
+   </BOUNDS>
+   <BOUNDS height="5010" left="-10995" top="5940" type="Window" width="6240">
+   </BOUNDS>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="1" dstpinname="View" srcnodeid="0" srcpinname="View Projection">
+   </LINK>
+   <NODE componentmode="Hidden" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" id="0" nodename="Camera (Transform Softimage)" systemname="Camera (Transform Softimage)">
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <BOUNDS height="100" left="1800" top="1455" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Inital Distance" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Initial Yaw" slicecount="1" values="-0.12">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="4" nodename="IOBox (Node)" systemname="IOBox (Node)">
+   <BOUNDS height="0" left="675" top="195" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="675" top="195" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Layers">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="2" dstpinname="Layer 2" srcnodeid="4" srcpinname="Output Node">
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="5">
+   <BOUNDS type="Node" left="375" top="2520" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="375" top="2520" width="7410" height="5310">
+   </BOUNDS>
+   <BOUNDS type="Window" left="12555" top="10710" width="6240" height="5010">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Layer" dstnodeid="5" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="View Projection" dstnodeid="5" dstpinname="View" linkstyle="VHV">
+   <LINKPOINT x="1830" y="1935">
+   </LINKPOINT>
+   <LINKPOINT x="2220" y="1935">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>
