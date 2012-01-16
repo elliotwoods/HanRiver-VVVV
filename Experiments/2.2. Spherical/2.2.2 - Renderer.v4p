@@ -1,15 +1,7 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\2.2.2 - Renderer.v4p" filename="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\2.2.2 - Renderer.v4p" systemname="2.2.2 - Renderer">
-   <BOUNDS height="8550" left="12375" top="4305" type="Window" width="8295">
+   <BOUNDS height="7680" left="11955" top="210" type="Window" width="8295">
    </BOUNDS>
-   <LINK dstnodeid="2" dstpinname="Layer 1" srcnodeid="3" srcpinname="Layer">
-   </LINK>
-   <NODE componentmode="Hidden" filename="%VVVV%\lib\nodes\modules\EX9\AxisAndGrid (DX9).v4p" id="3" nodename="AxisAndGrid (DX9)" systemname="AxisAndGrid (DX9)">
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   <BOUNDS height="100" left="390" top="945" type="Node" width="100">
-   </BOUNDS>
-   </NODE>
    <NODE componentmode="Hidden" id="2" nodename="Group (EX9)" systemname="Group (EX9)">
    <PIN pinname="Layer 1" visible="1">
    </PIN>
@@ -17,31 +9,49 @@
    </PIN>
    <PIN pinname="Layer 2" slicecount="1" visible="1" values="||">
    </PIN>
-   <BOUNDS height="100" left="390" top="1455" type="Node" width="100">
+   <BOUNDS height="100" left="690" top="2805" type="Node" width="100">
    </BOUNDS>
+   <PIN pinname="Layer Template Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1">
+   </PIN>
    </NODE>
-   <LINK dstnodeid="1" dstpinname="Layers" srcnodeid="2" srcpinname="Layer">
+   <LINK dstnodeid="1" dstpinname="Layers" linkstyle="VHV" srcnodeid="2" srcpinname="Layer">
+   <LINKPOINT x="650" y="3195">
+   </LINKPOINT>
+   <LINKPOINT x="790" y="3195">
+   </LINKPOINT>
    </LINK>
-   <NODE componentmode="FullScreen" id="1" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
+   <NODE componentmode="InAWindow" id="1" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
    <PIN pinname="Layers" visible="1">
    </PIN>
    <PIN pinname="View" visible="1">
    </PIN>
-   <BOUNDS height="100" left="690" top="1980" type="Node" width="100">
+   <BOUNDS height="270" left="690" top="3330" type="Node" width="5925">
    </BOUNDS>
-   <BOUNDS height="1800" left="690" top="1980" type="Box" width="2400">
+   <BOUNDS height="1800" left="690" top="3330" type="Box" width="2400">
    </BOUNDS>
-   <BOUNDS height="5010" left="-10995" top="5940" type="Window" width="6240">
+   <BOUNDS height="13050" left="10785" top="2295" type="Window" width="17625">
    </BOUNDS>
    <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="D24X8">
    </PIN>
-   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1920 x 1080|">
    </PIN>
    <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="NONE">
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
    </PIN>
-   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="NONE">
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Enabled">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
    </PIN>
    </NODE>
    <LINK dstnodeid="1" dstpinname="View" srcnodeid="0" srcpinname="View Projection">
@@ -49,47 +59,239 @@
    <NODE componentmode="Hidden" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" id="0" nodename="Camera (Transform Softimage)" systemname="Camera (Transform Softimage)">
    <PIN pinname="View Projection" visible="1">
    </PIN>
-   <BOUNDS height="100" left="1800" top="1455" type="Node" width="100">
+   <BOUNDS height="100" left="5235" top="2715" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Inital Distance" slicecount="1" values="5">
    </PIN>
    <PIN pinname="Initial Yaw" slicecount="1" values="-0.12">
    </PIN>
+   <PIN pinname="Distortion" visible="1">
+   </PIN>
+   <PIN pinname="Initial Interest" visible="1">
+   </PIN>
    </NODE>
    <NODE componentmode="InABox" id="4" nodename="IOBox (Node)" systemname="IOBox (Node)">
-   <BOUNDS height="0" left="675" top="195" type="Node" width="0">
+   <BOUNDS height="0" left="870" top="945" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="240" left="675" top="195" type="Box" width="795">
+   <BOUNDS height="240" left="870" top="945" type="Box" width="795">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
    <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Layers">
    </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
    </NODE>
    <LINK dstnodeid="2" dstpinname="Layer 2" srcnodeid="4" srcpinname="Output Node">
    </LINK>
-   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="5">
-   <BOUNDS type="Node" left="375" top="2520" width="100" height="100">
+   <NODE componentmode="Hidden" id="6" nodename="Divide (Value)" systemname="Divide (Value)">
+   <BOUNDS height="270" left="5070" top="4020" type="Node" width="825">
    </BOUNDS>
-   <BOUNDS type="Box" left="375" top="2520" width="7410" height="5310">
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="7" nodename="Scale (Transform)" systemname="Scale (Transform)">
+   <BOUNDS height="100" left="6255" top="2295" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS type="Window" left="12555" top="10710" width="6240" height="5010">
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="0" dstpinname="Distortion" srcnodeid="7" srcpinname="Transform Out">
+   </LINK>
+   <LINK dstnodeid="7" dstpinname="Y" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="6" srcpinname="Output">
+   <LINKPOINT x="5130" y="3285">
+   </LINKPOINT>
+   <LINKPOINT x="6600" y="3285">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="6" dstpinname="Input" srcnodeid="1" srcpinname="Actual Backbuffer Width">
+   </LINK>
+   <LINK dstnodeid="6" dstpinname="Input 2" srcnodeid="1" srcpinname="Actual Backbuffer Height">
+   </LINK>
+   <NODE componentmode="Hidden" filename="%VVVV%\modules\vvvv group\EX9\Axis (DX9).v4p" id="8" nodename="Axis (DX9)" systemname="Axis (DX9)">
+   <BOUNDS height="100" left="690" top="2355" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <BOUNDS left="690" top="2355" type="Box">
+   </BOUNDS>
+   </NODE>
+   <LINK dstnodeid="2" dstpinname="Layer 1" srcnodeid="8" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="InABox" id="9" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="4605" top="945" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="480" left="4605" top="945" type="Box" width="480">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="1" dstpinname="Enabled" linkstyle="VHV" srcnodeid="9" srcpinname="Y Output Value">
+   <LINKPOINT x="3760" y="2158">
+   </LINKPOINT>
+   <LINKPOINT x="2540" y="2418">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="InABox" id="10" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="5520" top="945" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="720" left="5520" top="945" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="3" values="0,2.96,3.07">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN encoded="0" pinname="Default" slicecount="1" values="|0, 0, 0|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Initial Interest|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="0" dstpinname="Initial Interest" linkstyle="VHV" srcnodeid="10" srcpinname="Y Output Value">
+   <LINKPOINT x="5535" y="2190">
+   </LINKPOINT>
+   <LINKPOINT x="5265" y="2190">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" id="17" nodename="Vector (2d Join)" systemname="Vector (2d Join)">
+   <BOUNDS height="270" left="690" top="4605" type="Node" width="810">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="17" dstpinname="X" srcnodeid="1" srcpinname="X">
+   </LINK>
+   <LINK dstnodeid="17" dstpinname="Y" srcnodeid="1" srcpinname="Y">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.RenderTools\Pipet (RenderTools).v4p" id="25" nodename="..\..\..\..\VVVV.Research\VVVV.Nodes.RenderTools\Pipet (RenderTools).v4p" systemname="Pipet (RenderTools)">
+   <BOUNDS height="270" left="870" top="6435" type="Node" width="4275">
+   </BOUNDS>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Aspect ratio" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <BOUNDS height="14625" left="5175" top="0" type="Window" width="8970">
+   </BOUNDS>
+   <PIN pinname="ViewProjection" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="25" dstpinname="XY" hiddenwhenlocked="1" linkstyle="VHV" srcnodeid="17" srcpinname="XY">
+   <LINKPOINT x="750" y="5640">
+   </LINKPOINT>
+   <LINKPOINT x="3675" y="5640">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="25" dstpinname="Layers" srcnodeid="4" srcpinname="Output Node">
+   </LINK>
+   <LINK dstnodeid="25" dstpinname="Aspect ratio" srcnodeid="6" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="2" dstpinname="Layer 3" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="25" srcpinname="Layer">
+   <LINKPOINT x="900" y="4755">
+   </LINKPOINT>
+   <LINKPOINT x="1065" y="4755">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="25" dstpinname="ViewProjection" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="0" srcpinname="View Projection">
+   <LINKPOINT x="5220" y="4703">
+   </LINKPOINT>
+   <LINKPOINT x="2340" y="4703">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\..\..\..\VVVV.Research\VVVV.Nodes.RenderTools\RenderInParts (RenderTools).v4p" id="26" nodename="RenderInParts (RenderTools)" systemname="RenderInParts (RenderTools)">
+   <BOUNDS height="100" left="1890" top="4605" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="12915" left="1935" top="2235" type="Window" width="14745">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
    <PIN pinname="View" visible="1">
    </PIN>
-   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   <BOUNDS left="1890" top="4605" type="Box">
+   </BOUNDS>
+   <PIN pinname="Run">
    </PIN>
-   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="3">
+   <PIN encoded="0" pinname="Filename" slicecount="1" values="Renders\Render">
+   </PIN>
+   <PIN pinname="Tile count XY" slicecount="1" values="6">
    </PIN>
    </NODE>
-   <LINK srcnodeid="2" srcpinname="Layer" dstnodeid="5" dstpinname="Layers">
+   <LINK dstnodeid="26" dstpinname="Layers" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="4" srcpinname="Output Node">
+   <LINKPOINT x="900" y="2895">
+   </LINKPOINT>
+   <LINKPOINT x="1905" y="2895">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="0" srcpinname="View Projection" dstnodeid="5" dstpinname="View" linkstyle="VHV">
-   <LINKPOINT x="1830" y="1935">
+   <LINK dstnodeid="26" dstpinname="View" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="0" srcpinname="View Projection">
+   <LINKPOINT x="5235" y="3780">
    </LINKPOINT>
-   <LINKPOINT x="2220" y="1935">
+   <LINKPOINT x="2310" y="3780">
    </LINKPOINT>
+   </LINK>
+   <NODE componentmode="InABox" id="27" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="3180" top="945" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="480" left="3180" top="945" type="Box" width="480">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Run">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="26" dstpinname="Run" srcnodeid="27" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="28" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="1890" top="5070" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="480" left="1890" top="5070" type="Box" width="480">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Rendering">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="28" dstpinname="Y Input Value" srcnodeid="26" srcpinname="Rendering">
    </LINK>
    </PATCH>
