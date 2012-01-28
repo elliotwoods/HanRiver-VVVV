@@ -1,0 +1,153 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
+   <PATCH nodename="C:\kimchiandchips\Installations\Han River\Experiments\2.4. Camera views\2.4.1 - Projector Indices.v4p" filename="C:\kimchiandchips\Installations\Han River\Experiments\2.4. Camera views\2.4.1 - Projector Indices.v4p" systemname="2.4.1 - Projector Indices">
+   <BOUNDS height="6000" left="14775" top="10200" type="Window" width="10710">
+   </BOUNDS>
+   <NODE componentmode="InABox" id="10" nodename="IOBox (Node)" systemname="IOBox (Node)">
+   <BOUNDS height="100" left="4125" top="720" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="240" left="4125" top="720" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|ViewProjection Transform|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="9" nodename="IOBox (Node)" systemname="IOBox (Node)">
+   <BOUNDS height="0" left="1065" top="720" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="1065" top="720" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Mesh">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="8" nodename="IOBox (Node)" systemname="IOBox (Node)">
+   <BOUNDS height="0" left="1710" top="1245" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="1710" top="1245" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Transform">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" filename="effects\TestShadows.fx" id="7" nodename="TestShadows (EX9.Effect)" systemname="TestShadows (EX9.Effect)">
+   <BOUNDS height="270" left="435" top="2355" type="Node" width="8775">
+   </BOUNDS>
+   <PIN pinname="Mesh" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Transform" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="tProjector" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Depth Map" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="fudge">
+   </PIN>
+   <PIN pinname="threshold" slicecount="1" values="0.00100000004749745">
+   </PIN>
+   <PIN pinname="fudge2">
+   </PIN>
+   <PIN pinname="Light Direction XYZ">
+   </PIN>
+   <PIN pinname="Ambient Color" slicecount="1" values="|0.03942,0.03942,0.03942,1.00000|">
+   </PIN>
+   <PIN pinname="Diffuse Color" slicecount="1" values="|0.29328,0.29328,0.29328,1.00000|">
+   </PIN>
+   <PIN pinname="Technique">
+   </PIN>
+   <PIN pinname="ProjectorResolution XY">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Mesh" srcnodeid="9" srcpinname="Output Node">
+   </LINK>
+   <LINK dstnodeid="7" dstpinname="Transform" srcnodeid="8" srcpinname="Output Node">
+   </LINK>
+   <NODE componentmode="InABox" id="6" nodename="IOBox (Node)" systemname="IOBox (Node)">
+   <BOUNDS height="0" left="435" top="2955" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="435" top="2955" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Layer">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="6" dstpinname="Input Node" srcnodeid="7" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="InABox" id="5" nodename="IOBox (Node)" systemname="IOBox (Node)">
+   <BOUNDS height="0" left="5190" top="720" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="5190" top="720" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Depth Map|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Depth Map" linkstyle="VHV" srcnodeid="5" srcpinname="Output Node">
+   <LINKPOINT x="5040" y="1560">
+   </LINKPOINT>
+   <LINKPOINT x="3060" y="1710">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="7" dstpinname="tProjector" linkstyle="VHV" srcnodeid="10" srcpinname="Output Node">
+   </LINK>
+   <NODE componentmode="InABox" id="4" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="6480" top="1215" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="720" left="6480" top="1215" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" values="0.1,0,0">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Light Direction XYZ" srcnodeid="4" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="11" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="7290" top="495" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="480" left="7290" top="495" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="2" values="1024,768">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|ProjectorResolution XY|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="ProjectorResolution XY" srcnodeid="11" srcpinname="Y Output Value">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="12" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Node" left="7920" top="1605" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7920" top="1605" width="1590" height="240">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" values="| TWorldXYZ|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Technique" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Output Enum" dstnodeid="7" dstpinname="Technique">
+   </LINK>
+   </PATCH>
