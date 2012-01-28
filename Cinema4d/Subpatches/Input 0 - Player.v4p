@@ -1,0 +1,179 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha26.1.dtd" >
+   <PATCH nodename="C:\kimchiandchips\Installations\Han River\Cinema4d\Subpatches\Input 0 - Player.v4p" filename="C:\kimchiandchips\Installations\Han River\Cinema4d\Subpatches\Input 0 - Player.v4p" systemname="Input 0 - Player">
+   <BOUNDS height="7830" left="7125" top="12285" type="Window" width="7650">
+   </BOUNDS>
+   <NODE componentmode="Hidden" id="1" nodename="FileTexture (EX9.Texture)" systemname="FileTexture (EX9.Texture)">
+   <BOUNDS height="270" left="4560" top="5355" type="Node" width="1845">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Filename">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="0" nodename="FileTexture (EX9.Texture)" systemname="FileTexture (EX9.Texture)">
+   <BOUNDS height="270" left="840" top="5370" type="Node" width="1845">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Load In Background" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="2" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="0" left="4560" top="300" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="4560" top="300" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Input String" slicecount="1" values="..\Output\front0024.png">
+   </PIN>
+   <PIN encoded="0" pinname="Default" slicecount="1" values="image.jpg">
+   </PIN>
+   <PIN encoded="0" pinname="File Mask" slicecount="1" values="|All Pictures (*.bmp, *.dds, *.hdr, *.jpg, *.png, *.tif, *.tga)||*.bmp;*.dds;*.hdr;*.jpg;*.png;*.tif;*.tga||Bitmap (*.bmp)||*.bmp||HDR (*.hdr)||*.hdr||DDS (*.dds)||*.dds||JPG (*.jpg)||*.jpg||PNG (*.png)||*.png||TIFF (*.tif)||*.tif||Targa (*.tga)||*.tga|">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Filename">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|RGBA Filename|">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="1" dstpinname="Filename" srcnodeid="2" srcpinname="Output String">
+   </LINK>
+   <NODE componentmode="Hidden" filename="plugins\StringSubstring\StringSubstring.csproj" id="3" nodename="Substring (String)" systemname="Substring (String)">
+   <BOUNDS height="100" left="2460" top="3330" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Length" visible="1" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Start" slicecount="1" values="-4">
+   </PIN>
+   <BOUNDS type="Box" left="2460" top="3330">
+   </BOUNDS>
+   </NODE>
+   <NODE componentmode="Hidden" id="6" nodename="Add (String)" systemname="Add (String)">
+   <BOUNDS height="270" left="840" top="3915" type="Node" width="3345">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Input 2" slicecount="1" values="_depth">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Input 4" slicecount="1" values=".hdr" encoded="0">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
+   <PIN pinname="Intersperse" visible="-1" pintype="Input" slicecount="1" values="None">
+   </PIN>
+   <PIN pinname="Intersperse String" visible="1" pintype="Input" slicecount="1" values="||" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="0" dstpinname="Filename" srcnodeid="6" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="InABox" id="7" nodename="IOBox (Node)" systemname="IOBox (Node)">
+   <BOUNDS height="0" left="840" top="6225" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="840" top="6225" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Depth">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Input Node" srcnodeid="0" srcpinname="Texture Out">
+   </LINK>
+   <NODE componentmode="InABox" id="8" nodename="IOBox (Node)" systemname="IOBox (Node)">
+   <BOUNDS height="0" left="4560" top="6225" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="4560" top="6225" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="RGBA">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="8" dstpinname="Input Node" srcnodeid="1" srcpinname="Texture Out">
+   </LINK>
+   <NODE systemname="Substitute (String)" filename="" nodename="Substitute (String)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="855" top="2445" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="From" slicecount="1" values=".png" encoded="0">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output String" dstnodeid="9" dstpinname="Input" linkstyle="VHV">
+   <LINKPOINT x="4560" y="1478">
+   </LINKPOINT>
+   <LINKPOINT x="915" y="1478">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Substring (String)" filename="plugins\StringSubstring\StringSubstring.csproj" nodename="Substring (String)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="855" top="3330" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Length" slicecount="1" values="-4">
+   </PIN>
+   <PIN pinname="Start" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="855" top="3330">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="10" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="3" dstpinname="Input" linkstyle="VHV">
+   <LINKPOINT x="820" y="2950">
+   </LINKPOINT>
+   <LINKPOINT x="2555" y="3050">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Output" dstnodeid="6" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="6" dstpinname="Input 3">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="13" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="2625" top="6225" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2625" top="6225" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Up And Running" dstnodeid="13" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="14" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="6345" top="6225" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6345" top="6225" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Up And Running" dstnodeid="14" dstpinname="Y Input Value">
+   </LINK>
+   </PATCH>
