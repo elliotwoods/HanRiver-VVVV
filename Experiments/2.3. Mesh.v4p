@@ -61,7 +61,7 @@
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" filename="2.2. Spherical\2.2.1 - Wire positions preview.v4p" id="14" nodename="2.2. Spherical\2.2.1 - Wire positions preview.v4p" systemname="2.2.1 - Wire positions preview" path="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\">
-   <BOUNDS height="270" left="3975" top="3015" type="Node" width="5400">
+   <BOUNDS height="270" left="3975" top="3165" type="Node" width="5400">
    </BOUNDS>
    <BOUNDS height="8595" left="10920" top="6240" type="Window" width="16110">
    </BOUNDS>
@@ -89,9 +89,9 @@
    </PIN>
    </NODE>
    <LINK dstnodeid="13" dstpinname="Viewport Matrix Transformation" linkstyle="VHV" srcnodeid="14" srcpinname="Transform Out">
-   <LINKPOINT x="6930" y="3453">
+   <LINKPOINT x="6930" y="3553">
    </LINKPOINT>
-   <LINKPOINT x="8190" y="3553">
+   <LINKPOINT x="8190" y="3603">
    </LINKPOINT>
    </LINK>
    <NODE componentmode="Hidden" filename="2.2. Spherical\2.2.2 - Renderer.v4p" id="15" nodename="2.2. Spherical\2.2.2 - Renderer.v4p" systemname="2.2.2 - Renderer" path="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\">
@@ -175,15 +175,15 @@
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="14" dstpinname="WHD" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="9" srcpinname="Y Output Value">
-   <LINKPOINT x="5370" y="2048">
+   <LINKPOINT x="5370" y="2098">
    </LINKPOINT>
-   <LINKPOINT x="7965" y="2048">
+   <LINKPOINT x="7965" y="2148">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="13" dstpinname="Layers" linkstyle="VHV" srcnodeid="14" srcpinname="GDI Layer">
-   <LINKPOINT x="6295" y="3453">
+   <LINKPOINT x="6295" y="3553">
    </LINKPOINT>
-   <LINKPOINT x="5120" y="3553">
+   <LINKPOINT x="5120" y="3603">
    </LINKPOINT>
    </LINK>
    <NODE componentmode="Hidden" filename="2.2. Spherical\2.2.3 - Scene.v4p" id="19" nodename="2.2. Spherical\2.2.3 - Scene.v4p" systemname="2.2.3 - Scene" path="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\">
@@ -205,7 +205,7 @@
    </BOUNDS>
    <BOUNDS height="720" left="11385" top="900" type="Box" width="795">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" values="0,2.96,3.07">
+   <PIN pinname="Y Input Value" slicecount="3" values="0,2.56,3.07">
    </PIN>
    <PIN encoded="0" pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -221,9 +221,9 @@
    <LINK dstnodeid="20" dstpinname="XYZ" srcnodeid="21" srcpinname="Y Output Value">
    </LINK>
    <LINK dstnodeid="14" dstpinname="Transform In" linkstyle="VHV" srcnodeid="20" srcpinname="Transform Out">
-   <LINKPOINT x="10680" y="2940">
+   <LINKPOINT x="10680" y="2990">
    </LINKPOINT>
-   <LINKPOINT x="9345" y="2940">
+   <LINKPOINT x="9345" y="3040">
    </LINKPOINT>
    </LINK>
    <NODE componentmode="Hidden" filename="..\..\..\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Preview (ProjectorSimulation).v4p" id="28" nodename="Preview (ProjectorSimulation)" systemname="Preview (ProjectorSimulation)">
@@ -310,12 +310,12 @@
    <LINKPOINT x="570" y="10285">
    </LINKPOINT>
    </LINK>
-   <NODE componentmode="Hidden" filename="2.2. Spherical\2.2.5 - Projector transforms.v4p" id="34" nodename="2.2. Spherical\2.2.5 - Projector transforms.v4p" systemname="2.2.5 - Projector transforms" path="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\">
+   <NODE componentmode="InAWindow" filename="2.2. Spherical\2.2.5 - Projector transforms.v4p" id="34" nodename="2.2. Spherical\2.2.5 - Projector transforms.v4p" systemname="2.2.5 - Projector transforms" path="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\">
    <BOUNDS height="100" left="1680" top="7515" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="ViewProjection transform" visible="1">
    </PIN>
-   <BOUNDS height="9015" left="14040" top="3750" type="Window" width="8265">
+   <BOUNDS height="9015" left="3180" top="4695" type="Window" width="8265">
    </BOUNDS>
    <PIN pinname="Position" visible="1">
    </PIN>
@@ -365,7 +365,7 @@
    </BOUNDS>
    <BOUNDS height="480" left="8325" top="7140" type="Box" width="795">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" values="640,480">
+   <PIN pinname="Y Input Value" slicecount="2" values="1024,768">
    </PIN>
    <PIN encoded="0" pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -399,9 +399,9 @@
    <LINK dstnodeid="37" dstpinname="Input 1" srcnodeid="28" srcpinname="Layers">
    </LINK>
    <LINK dstnodeid="37" dstpinname="Input 2" linkstyle="Bezier" srcnodeid="14" srcpinname="DX9 Layer">
-   <LINKPOINT x="3990" y="6630">
+   <LINKPOINT x="3990" y="6730">
    </LINKPOINT>
-   <LINKPOINT x="1980" y="6630">
+   <LINKPOINT x="1980" y="6680">
    </LINKPOINT>
    </LINK>
    <NODE componentmode="InABox" id="38" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
@@ -409,7 +409,7 @@
    </BOUNDS>
    <BOUNDS height="480" left="1140" top="9135" type="Box" width="480">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
    <PIN encoded="0" pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -419,7 +419,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK dstnodeid="37" dstpinname="Switch" linkstyle="VHV" srcnodeid="38" srcpinname="Y Output Value">
@@ -450,8 +450,8 @@
    </NODE>
    <LINK dstnodeid="15" dstpinname="Run" srcnodeid="39" srcpinname="Y Output Value">
    </LINK>
-   <NODE systemname="FromCinema4D" filename="2.3 Mesh\FromCinema4D.v4p" nodename="2.3 Mesh\FromCinema4D.v4p" componentmode="Hidden" id="40">
-   <BOUNDS type="Node" left="3960" top="2265" width="2730" height="270">
+   <NODE componentmode="Hidden" filename="2.3 Mesh\FromCinema4D.v4p" id="40" nodename="2.3 Mesh\FromCinema4D.v4p" systemname="FromCinema4D" path="C:\kimchiandchips\Installations\Han River\Experiments\2.3 Mesh\">
+   <BOUNDS height="270" left="3960" top="2265" type="Node" width="2730">
    </BOUNDS>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
@@ -459,39 +459,57 @@
    </PIN>
    <PIN pinname="Transform In 1" visible="1">
    </PIN>
+   <PIN encoded="0" pinname="Filename" slicecount="1" values="media\sphere_drop.x">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="40" srcpinname="Transform Out" dstnodeid="14" dstpinname="Box transforms">
+   <LINK dstnodeid="14" dstpinname="Box transforms" srcnodeid="40" srcpinname="Transform Out">
    </LINK>
-   <LINK srcnodeid="40" srcpinname="Transform Out" dstnodeid="32" dstpinname="Transform" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINK dstnodeid="32" dstpinname="Transform" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="40" srcpinname="Transform Out">
    <LINKPOINT x="6645" y="5940">
    </LINKPOINT>
    <LINKPOINT x="6300" y="5940">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="40" srcpinname="Transform Out" dstnodeid="30" dstpinname="Transform" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINK dstnodeid="30" dstpinname="Transform" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="40" srcpinname="Transform Out">
    <LINKPOINT x="6660" y="5618">
    </LINKPOINT>
    <LINKPOINT x="7620" y="5618">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="40" srcpinname="Mesh" dstnodeid="14" dstpinname="Mesh">
+   <LINK dstnodeid="14" dstpinname="Mesh" srcnodeid="40" srcpinname="Mesh">
    </LINK>
-   <LINK srcnodeid="40" srcpinname="Mesh" dstnodeid="32" dstpinname="Mesh" linkstyle="Bezier">
+   <LINK dstnodeid="32" dstpinname="Mesh" linkstyle="Bezier" srcnodeid="40" srcpinname="Mesh">
    <LINKPOINT x="3990" y="5940">
    </LINKPOINT>
    <LINKPOINT x="5790" y="5940">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="40" srcpinname="Mesh" dstnodeid="30" dstpinname="Mesh" linkstyle="Bezier">
+   <LINK dstnodeid="30" dstpinname="Mesh" linkstyle="Bezier" srcnodeid="40" srcpinname="Mesh">
    <LINKPOINT x="4020" y="5618">
    </LINKPOINT>
    <LINKPOINT x="7230" y="5618">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="20" srcpinname="Transform Out" dstnodeid="40" dstpinname="Transform In 1" linkstyle="VHV">
+   <LINK dstnodeid="40" dstpinname="Transform In 1" linkstyle="VHV" srcnodeid="20" srcpinname="Transform Out">
    <LINKPOINT x="10650" y="2160">
    </LINKPOINT>
    <LINKPOINT x="4020" y="2160">
    </LINKPOINT>
+   </LINK>
+   <NODE componentmode="InABox" id="41" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="6615" top="2625" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="6615" top="2625" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Cubes">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="41" dstpinname="Y Input Value" srcnodeid="40" srcpinname="Cubes">
    </LINK>
    </PATCH>

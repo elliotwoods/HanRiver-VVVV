@@ -22,7 +22,7 @@
    <LINKPOINT x="790" y="3195">
    </LINKPOINT>
    </LINK>
-   <NODE componentmode="InAWindow" id="1" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
+   <NODE border="0" componentmode="InAWindow" id="1" nodename="Renderer (EX9)" stayontop="0" systemname="Renderer (EX9)">
    <PIN pinname="Layers" visible="1">
    </PIN>
    <PIN pinname="View" visible="1">
@@ -31,7 +31,7 @@
    </BOUNDS>
    <BOUNDS height="1800" left="690" top="3330" type="Box" width="2400">
    </BOUNDS>
-   <BOUNDS height="13050" left="10785" top="2295" type="Window" width="17625">
+   <BOUNDS height="11310" left="8970" top="4035" type="Window" width="19440">
    </BOUNDS>
    <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="D24X8">
    </PIN>
@@ -293,5 +293,19 @@
    </PIN>
    </NODE>
    <LINK dstnodeid="28" dstpinname="Y Input Value" srcnodeid="26" srcpinname="Rendering">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="29" systemname="IOBox (Node)">
+   <BOUNDS type="Node" left="6900" top="3300" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6900" top="3300" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|View Projection|" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="View Projection" dstnodeid="29" dstpinname="Input Node" linkstyle="VHV">
+   <LINKPOINT x="5295" y="3128">
+   </LINKPOINT>
+   <LINKPOINT x="6900" y="3128">
+   </LINKPOINT>
    </LINK>
    </PATCH>
