@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha27.1.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\Han River\Experiments\2.4. Camera views\2.4.1 - Projector Indices.v4p" filename="C:\kimchiandchips\Installations\Han River\Experiments\2.4. Camera views\2.4.1 - Projector Indices.v4p" systemname="2.4.1 - Projector Indices">
-   <BOUNDS height="6000" left="14775" top="10200" type="Window" width="10710">
+   <BOUNDS height="6000" left="4455" top="20325" type="Window" width="10710">
    </BOUNDS>
    <NODE componentmode="InABox" id="10" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="100" left="4125" top="720" type="Node" width="100">
@@ -25,9 +25,9 @@
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="8" nodename="IOBox (Node)" systemname="IOBox (Node)">
-   <BOUNDS height="0" left="1710" top="1245" type="Node" width="0">
+   <BOUNDS height="0" left="1680" top="1245" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="240" left="1710" top="1245" type="Box" width="795">
+   <BOUNDS height="240" left="1680" top="1245" type="Box" width="795">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
@@ -138,16 +138,16 @@
    </NODE>
    <LINK dstnodeid="7" dstpinname="ProjectorResolution XY" srcnodeid="11" srcpinname="Y Output Value">
    </LINK>
-   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="12" systemname="IOBox (Enumerations)">
-   <BOUNDS type="Node" left="7920" top="1605" width="0" height="0">
+   <NODE componentmode="InABox" id="12" nodename="IOBox (Enumerations)" systemname="IOBox (Enumerations)">
+   <BOUNDS height="0" left="7920" top="1605" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="7920" top="1605" width="1590" height="240">
+   <BOUNDS height="240" left="7920" top="1605" type="Box" width="1590">
    </BOUNDS>
    <PIN pinname="Input Enum" slicecount="1" values="| TWorldXYZ|">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Technique" encoded="0">
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Technique">
    </PIN>
    </NODE>
-   <LINK srcnodeid="12" srcpinname="Output Enum" dstnodeid="7" dstpinname="Technique">
+   <LINK dstnodeid="7" dstpinname="Technique" srcnodeid="12" srcpinname="Output Enum">
    </LINK>
    </PATCH>
