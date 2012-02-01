@@ -71,7 +71,9 @@ float4x4 tTransform;
 float depthMult = 10.0f;
 float4 PS(vs2ps In): COLOR
 {
-	return tex2D(SampRGBA, In.TexCd);
+	float4 col = 1;
+	col.rgb = tex2D(SampRGBA, In.TexCd).rgb;
+	return col;
 }
 
 float4 PSWhite(vs2ps In): COLOR
