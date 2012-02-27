@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\Han River\Experiments\modules\Writer (File, Transform).v4p" filename="C:\kimchiandchips\Installations\Han River\Experiments\modules\Writer (File, Transform).v4p" systemname="Writer (File, Transform)">
-   <BOUNDS height="6000" left="7995" top="12255" type="Window" width="5595">
+   <BOUNDS height="5130" left="7995" top="12255" type="Window" width="5145">
    </BOUNDS>
    <NODE componentmode="InABox" id="0" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="100" left="795" top="465" type="Node" width="100">
@@ -22,28 +22,16 @@
    </NODE>
    <LINK dstnodeid="1" dstpinname="Transform" srcnodeid="0" srcpinname="Output Node">
    </LINK>
-   <NODE componentmode="Hidden" id="3" nodename="Add (String Spectral)" systemname="Add (String Spectral)">
-   <BOUNDS height="100" left="795" top="2400" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Bin Size" slicecount="1" values="16">
-   </PIN>
-   <PIN pinname="Intersperse" slicecount="1" values="CommaPlusSpace">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
    <NODE componentmode="Hidden" id="4" nodename="Add (String Spectral)" systemname="Add (String Spectral)">
-   <BOUNDS height="100" left="780" top="2865" type="Node" width="100">
+   <BOUNDS height="100" left="780" top="3165" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
+   <PIN pinname="Intersperse" slicecount="1" values="CarriageReturn">
+   </PIN>
    </NODE>
-   <LINK dstnodeid="4" dstpinname="Input" srcnodeid="3" srcpinname="Output">
-   </LINK>
    <NODE componentmode="Hidden" filename="" id="5" nodename="Writer (File)" systemname="Writer (File)">
    <BOUNDS height="270" left="780" top="3945" type="Node" width="3135">
    </BOUNDS>
@@ -81,7 +69,7 @@
    </BOUNDS>
    <BOUNDS height="240" left="3840" top="465" type="Box" width="795">
    </BOUNDS>
-   <PIN encoded="0" pinname="Input String" slicecount="1" values="..\output\projectors.mat">
+   <PIN encoded="0" pinname="Input String" slicecount="1" values="..\..\..\..\..\openFrameworks\openFrameworks\apps\KC.Installations.HanRiver.PreProduction.OpenFrameworks\test1-matrixLoad\bin\data\testFromVVVV.mat">
    </PIN>
    <PIN encoded="0" pinname="Default" slicecount="1" values="file.txt">
    </PIN>
@@ -96,18 +84,52 @@
    </NODE>
    <LINK dstnodeid="5" dstpinname="Filename" srcnodeid="7" srcpinname="Output String">
    </LINK>
-   <NODE componentmode="Hidden" id="2" nodename="FormatValue (String)" systemname="FormatValue (String)">
-   <BOUNDS height="100" left="795" top="1965" type="Node" width="100">
+   <NODE systemname="Add (String Spectral)" nodename="Add (String Spectral)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="795" top="2760" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Bin Size" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Intersperse" slicecount="1" values="CommaPlusSpace">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Intersperse String" slicecount="1" values="||" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="4" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="2370" top="2670" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Pad (String)" nodename="Pad (String)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="795" top="2310" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Size" slicecount="1" values="8">
+   </PIN>
+   <PIN pinname="Padding" slicecount="1" values="| |" encoded="0">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Align" slicecount="1" values="Right">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Output" dstnodeid="9" dstpinname="Input">
+   </LINK>
+   <NODE systemname="AsString (String Value)" filename="plugins\ValueStringAsString\ValueStringAsString.csproj" nodename="AsString (String Value)" componentmode="Hidden" id="13">
+   <BOUNDS type="Node" left="795" top="1905" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Characters after Comma" slicecount="1" values="15">
-   </PIN>
    </NODE>
-   <LINK dstnodeid="2" dstpinname="Input" srcnodeid="1" srcpinname="Matrix Out">
+   <LINK srcnodeid="1" srcpinname="Matrix Out" dstnodeid="13" dstpinname="Input">
    </LINK>
-   <LINK dstnodeid="3" dstpinname="Input" srcnodeid="2" srcpinname="Output">
+   <LINK srcnodeid="13" srcpinname="Output" dstnodeid="11" dstpinname="Input">
    </LINK>
    </PATCH>

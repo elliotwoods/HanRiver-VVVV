@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha27.1.dtd" >
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\2.2.2 - Renderer.v4p" filename="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\2.2.2 - Renderer.v4p" systemname="2.2.2 - Renderer">
-   <BOUNDS height="7680" left="2640" top="3855" type="Window" width="8295">
+   <BOUNDS height="7680" left="11955" top="210" type="Window" width="8295">
    </BOUNDS>
    <NODE componentmode="Hidden" id="2" nodename="Group (EX9)" systemname="Group (EX9)">
    <PIN pinname="Layer 1" visible="1">
@@ -22,7 +22,7 @@
    <LINKPOINT x="790" y="3195">
    </LINKPOINT>
    </LINK>
-   <NODE border="1" componentmode="InAWindow" id="1" nodename="Renderer (EX9)" stayontop="0" systemname="RENDERER (EX9)">
+   <NODE border="1" componentmode="Hidden" id="1" nodename="Renderer (EX9)" stayontop="0" systemname="RENDERER (EX9)">
    <PIN pinname="Layers" visible="1">
    </PIN>
    <PIN pinname="View" visible="1">
@@ -31,11 +31,11 @@
    </BOUNDS>
    <BOUNDS height="1800" left="690" top="3330" type="Box" width="2400">
    </BOUNDS>
-   <BOUNDS height="11310" left="-16455" top="6630" type="Window" width="19440">
+   <BOUNDS height="10680" left="-18900" top="12630" type="Window" width="19440">
    </BOUNDS>
    <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="D24X8">
    </PIN>
-   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|480 x 640|">
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1280 x 1024|">
    </PIN>
    <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="3">
    </PIN>
@@ -302,7 +302,7 @@
    <LINKPOINT x="6900" y="3128">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="7" dstpinname="Y" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINK dstnodeid="7" dstpinname="Y" hiddenwhenlocked="1" linkstyle="Bezier" srcnodeid="6" srcpinname="Output">
    <LINKPOINT x="5130" y="3285">
    </LINKPOINT>
    <LINKPOINT x="6600" y="3285">

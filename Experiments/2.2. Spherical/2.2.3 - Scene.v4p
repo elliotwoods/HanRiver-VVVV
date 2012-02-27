@@ -1,4 +1,4 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha27.1.dtd" >
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\2.2.3 - Scene.v4p" filename="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\2.2.3 - Scene.v4p" systemname="2.2.3 - Scene">
    <BOUNDS height="6165" left="8250" top="2835" type="Window" width="6345">
    </BOUNDS>

@@ -94,7 +94,7 @@
    <LINKPOINT x="8190" y="3603">
    </LINKPOINT>
    </LINK>
-   <NODE componentmode="Hidden" filename="2.2. Spherical\2.2.2 - Renderer.v4p" id="15" nodename="2.2. Spherical\2.2.2 - Renderer.v4p" systemname="2.2.2 - Renderer" path="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\">
+   <NODE componentmode="InAWindow" filename="2.2. Spherical\2.2.2 - Renderer.v4p" id="15" nodename="2.2. Spherical\2.2.2 - Renderer.v4p" systemname="2.2.2 - Renderer" path="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\">
    <BOUNDS height="270" left="510" top="12180" type="Node" width="2730">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
@@ -304,7 +304,7 @@
    </LINK>
    <LINK dstnodeid="14" dstpinname="XZ" srcnodeid="16" srcpinname="Wire XZ">
    </LINK>
-   <NODE componentmode="InAWindow" filename="2.2. Spherical\2.2.5 - Projector transforms.v4p" id="34" nodename="2.2. Spherical\2.2.5 - Projector transforms.v4p" systemname="2.2.5 - Projector transforms" path="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\">
+   <NODE componentmode="Hidden" filename="2.2. Spherical\2.2.5 - Projector transforms.v4p" id="34" nodename="2.2. Spherical\2.2.5 - Projector transforms.v4p" systemname="2.2.5 - Projector transforms" path="C:\kimchiandchips\Installations\Han River\Experiments\2.2. Spherical\">
    <BOUNDS height="100" left="1680" top="7515" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="ViewProjection transform" visible="1">
@@ -312,6 +312,8 @@
    <BOUNDS height="9015" left="4230" top="3870" type="Window" width="8265">
    </BOUNDS>
    <PIN pinname="Position" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
    </PIN>
    </NODE>
    <LINK dstnodeid="28" dstpinname="ViewProjection In" linkstyle="VHV" srcnodeid="34" srcpinname="ViewProjection transform">
@@ -469,7 +471,7 @@
    <NODE componentmode="InAWindow" filename="2.4. Camera views\2.4.1 - Projector Indices.v4p" id="42" nodename="2.4. Camera views\2.4.1 - Projector Indices.v4p" systemname="2.4.1 - Projector Indices" path="C:\kimchiandchips\Installations\Han River\Experiments\2.4. Camera views\">
    <BOUNDS height="100" left="9840" top="9345" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS height="6000" left="14775" top="10200" type="Window" width="10710">
+   <BOUNDS height="6000" left="6660" top="8295" type="Window" width="10710">
    </BOUNDS>
    <PIN pinname="Depth Map" visible="1">
    </PIN>
@@ -483,7 +485,7 @@
    </PIN>
    <PIN pinname="ProjectorResolution XY" visible="1">
    </PIN>
-   <PIN pinname="Technique" slicecount="1" values="| TWorldXYZ|">
+   <PIN pinname="Technique" slicecount="1" values="| TProjector1XYZ|">
    </PIN>
    </NODE>
    <LINK dstnodeid="42" dstpinname="Depth Map" linkstyle="VHV" srcnodeid="30" srcpinname="DepthMap Texture">
@@ -621,6 +623,8 @@
    </PIN>
    <PIN pinname="Z" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="X" slicecount="1" values="0">
+   </PIN>
    </NODE>
    <LINK dstnodeid="47" dstpinname="View" srcnodeid="48" srcpinname="Transform Out">
    </LINK>
@@ -657,9 +661,9 @@
    </BOUNDS>
    <PIN pinname="Texture" visible="1">
    </PIN>
-   <PIN pinname="File Format" slicecount="1" values="PFM">
+   <PIN pinname="File Format" slicecount="1" values="HDR">
    </PIN>
-   <PIN encoded="0" pinname="FileName" slicecount="1" values="XYZ">
+   <PIN encoded="0" pinname="FileName" slicecount="1" values="|..\..\..\..\Users\kimchips\Dropbox\Han River_share\CCS Data processing\camera-Projector1XYZ|">
    </PIN>
    <PIN pinname="Save" visible="1">
    </PIN>
@@ -679,7 +683,9 @@
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Save" encoded="0">
    </PIN>
    </NODE>
    <LINK dstnodeid="51" dstpinname="Save" srcnodeid="53" srcpinname="Y Output Value">
@@ -708,6 +714,10 @@
    <PIN pinname="Transform Out" visible="1">
    </PIN>
    <PIN pinname="Z" slicecount="1" values="0.25">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="0">
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="60" nodename="Multiply (Transform)" systemname="Multiply (Transform)">
@@ -948,26 +958,26 @@
    </LINK>
    <LINK dstnodeid="74" dstpinname="Content" srcnodeid="78" srcpinname="Output">
    </LINK>
-   <NODE systemname="Writer (File, Transform)" filename="modules\Writer (File, Transform).v4p" nodename="Writer (File, Transform)" componentmode="Hidden" id="81">
-   <BOUNDS type="Node" left="13575" top="10080" width="100" height="100">
+   <NODE componentmode="Hidden" filename="modules\Writer (File, Transform).v4p" id="81" nodename="Writer (File, Transform)" systemname="Writer (File, Transform)">
+   <BOUNDS height="100" left="13575" top="10080" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Transform" visible="1">
    </PIN>
-   <PIN pinname="Filename" slicecount="1" values="output\projectors.mat" encoded="0">
+   <PIN encoded="0" pinname="Filename" slicecount="1" values="|..\..\..\..\Users\kimchips\Dropbox\Han River_share\CCS Data processing\projectors.mat|">
    </PIN>
    <PIN pinname="Write">
    </PIN>
    </NODE>
-   <LINK srcnodeid="34" srcpinname="ViewProjection transform" dstnodeid="81" dstpinname="Transform">
+   <LINK dstnodeid="81" dstpinname="Transform" srcnodeid="34" srcpinname="ViewProjection transform">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="82" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Node" left="13920" top="9195" width="0" height="0">
+   <NODE componentmode="InABox" id="82" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="13920" top="9195" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="13920" top="9195" width="480" height="480">
+   <BOUNDS height="480" left="13920" top="9195" type="Box" width="480">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Precision" slicecount="1" values="4">
    </PIN>
@@ -975,31 +985,59 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Bang">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Write" encoded="0">
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Write">
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="82" srcpinname="Y Output Value" dstnodeid="81" dstpinname="Write">
+   <LINK dstnodeid="81" dstpinname="Write" srcnodeid="82" srcpinname="Y Output Value">
    </LINK>
-   <NODE systemname="Writer (File, Transform)" filename="modules\Writer (File, Transform).v4p" nodename="Writer (File, Transform)" componentmode="Hidden" id="84">
-   <BOUNDS type="Node" left="14475" top="10080" width="100" height="100">
+   <NODE componentmode="Hidden" filename="modules\Writer (File, Transform).v4p" id="84" nodename="Writer (File, Transform)" systemname="Writer (File, Transform)">
+   <BOUNDS height="100" left="14475" top="10080" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Transform" visible="1">
    </PIN>
-   <PIN pinname="Filename" slicecount="1" encoded="0" values="output\cameras.mat">
+   <PIN encoded="0" pinname="Filename" slicecount="1" values="|..\..\..\..\Users\kimchips\Dropbox\Han River_share\CCS Data processing\cameras.mat|">
    </PIN>
    <PIN pinname="Write" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="82" srcpinname="Y Output Value" dstnodeid="84" dstpinname="Write" linkstyle="VHV">
+   <LINK dstnodeid="84" dstpinname="Write" linkstyle="VHV" srcnodeid="82" srcpinname="Y Output Value">
    <LINKPOINT x="13980" y="9863">
    </LINKPOINT>
    <LINKPOINT x="14835" y="9863">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="60" srcpinname="Transform Out" dstnodeid="84" dstpinname="Transform">
+   <LINK dstnodeid="84" dstpinname="Transform" srcnodeid="60" srcpinname="Transform Out">
    </LINK>
+   <NODE componentmode="Hidden" id="85" nodename="Translate (Transform)" systemname="Translate (Transform)">
+   <BOUNDS height="100" left="11850" top="9840" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="-0.2">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="59" dstpinname="Transform In" srcnodeid="85" srcpinname="Transform Out">
+   </LINK>
+   <NODE componentmode="Hidden" id="86" nodename="Translate (Transform)" systemname="Translate (Transform)">
+   <BOUNDS height="100" left="1845" top="6060" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.42">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="34" dstpinname="Transform In" srcnodeid="86" srcpinname="Transform Out">
+   </LINK>
+   <NODE componentmode="InAWindow" id="87" nodename="Renderer (TTY)" systemname="Renderer (TTY)">
+   <BOUNDS height="100" left="6645" top="25455" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="1800" left="6645" top="25455" type="Box" width="2400">
+   </BOUNDS>
+   <BOUNDS height="5010" left="6615" top="17850" type="Window" width="6240">
+   </BOUNDS>
+   </NODE>
    </PATCH>
