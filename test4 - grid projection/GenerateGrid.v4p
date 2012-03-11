@@ -1,0 +1,253 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.1.dtd" >
+   <PATCH nodename="C:\vvvv\HanRiver-VVVV\test4 - grid projection\GenerateGrid.v4p" filename="C:\vvvv\HanRiver-VVVV\test4 - grid projection\GenerateGrid.v4p" systemname="GenerateGrid">
+   <BOUNDS height="15975" left="11745" top="570" type="Window" width="14130">
+   </BOUNDS>
+   <NODE componentmode="Hidden" id="1" nodename="Group (GDI)" systemname="Group (GDI)">
+   <BOUNDS height="270" left="555" top="4395" type="Node" width="6105">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="3" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="1500" top="225" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="645" left="1500" top="225" type="Box" width="810">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Projector WH|">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="2" values="1280,800">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="4" nodename="Line (GDI)" systemname="Line (GDI)">
+   <BOUNDS height="100" left="555" top="3885" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="X">
+   </PIN>
+   <PIN pinname="X2" visible="1">
+   </PIN>
+   <PIN pinname="Y1" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="X1" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="1" dstpinname="Layer 1" srcnodeid="4" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="Hidden" id="5" nodename="LinearSpread (Spreads)" systemname="LinearSpread (Spreads)">
+   <BOUNDS height="100" left="555" top="3285" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Spread Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="X1" srcnodeid="5" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="4" dstpinname="X2" srcnodeid="5" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="6" nodename="Vector (2d Split)" systemname="Vector (2d Split)">
+   <BOUNDS height="270" left="1515" top="2310" type="Node" width="3255">
+   </BOUNDS>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="7" nodename="Divide (Value)" systemname="Divide (Value)">
+   <BOUNDS height="100" left="1515" top="1875" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Input 2">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Input" srcnodeid="3" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="8" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="1770" top="1350" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="1770" top="1350" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="10">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Input 2" srcnodeid="8" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="6" dstpinname="XY" srcnodeid="7" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="5" dstpinname="Spread Count" linkstyle="VHV" srcnodeid="6" srcpinname="X">
+   <LINKPOINT x="1300" y="2918">
+   </LINKPOINT>
+   <LINKPOINT x="1775" y="2918">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" id="10" nodename="Line (GDI)" systemname="Line (GDI)">
+   <BOUNDS height="100" left="3585" top="3885" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="X">
+   </PIN>
+   <PIN pinname="X2" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Y1" visible="1">
+   </PIN>
+   <PIN pinname="X1" slicecount="1" visible="1" values="-1">
+   </PIN>
+   <PIN pinname="Y2" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="9" nodename="LinearSpread (Spreads)" systemname="LinearSpread (Spreads)">
+   <BOUNDS height="100" left="3750" top="3285" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Spread Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="1" dstpinname="Layer 2" srcnodeid="10" srcpinname="Layer">
+   </LINK>
+   <LINK dstnodeid="9" dstpinname="Spread Count" linkstyle="VHV" srcnodeid="6" srcpinname="Y">
+   <LINKPOINT x="1925" y="2918">
+   </LINKPOINT>
+   <LINKPOINT x="4930" y="2918">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="10" dstpinname="Y1" srcnodeid="9" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="10" dstpinname="Y2" srcnodeid="9" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="11" dstpinname="Source" srcnodeid="12" srcpinname="GDI Out">
+   </LINK>
+   <NODE componentmode="InABox" hiddenwhenlocked="0" id="12" managers="" nodename="Renderer (GDI)" systemname="Renderer (GDI)">
+   <PIN pinname="GDI Out" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Layers" pintype="Input" visible="1">
+   </PIN>
+   <BOUNDS height="100" left="555" top="4920" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="8310" left="555" top="4920" type="Box" width="12405">
+   </BOUNDS>
+   <BOUNDS height="5010" left="11190" top="11385" type="Window" width="6240">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Clear" pintype="Input" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Background Color" pintype="Input" slicecount="1" visible="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Backbuffer Width" pintype="Input" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Backbuffer Height" pintype="Input" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Fullscreen" pintype="Input" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Enabled" pintype="Input" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Viewport Matrix Transformation" pintype="Input" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="X" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Y" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Left Button" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Middle Button" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Right Button" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Is Fullscreen" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" hiddenwhenlocked="0" id="11" managers="" nodename="GDITexture (EX9.Texture)" systemname="GDITexture (EX9.Texture)">
+   <PIN pinname="Source" pintype="Input" visible="1">
+   </PIN>
+   <BOUNDS height="270" left="11715" top="14085" type="Node" width="1815">
+   </BOUNDS>
+   <PIN pinname="Texture Out" pintype="Output" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Type" pintype="Input" slicecount="1" visible="-1" values="Texture">
+   </PIN>
+   <PIN pinname="Format" pintype="Input" slicecount="1" visible="-1" values="|No Specific|">
+   </PIN>
+   <PIN pinname="Mip Map Count" pintype="Input" slicecount="1" visible="-1" values="|1 mm|">
+   </PIN>
+   <PIN pinname="Width" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="Height" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" pintype="Input" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Repair" pintype="Input" slicecount="1" visible="-1" values="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="12" dstpinname="Layers" srcnodeid="1" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="InABox" id="13" nodename="IOBox (Node)" systemname="IOBox (Node)">
+   <BOUNDS height="0" left="11715" top="14610" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="11715" top="14610" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Texture Out|">
+   </PIN>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="14" nodename="Vector (2d Split)" systemname="Vector (2d Split)">
+   <BOUNDS height="100" left="11715" top="13620" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="11" dstpinname="Width" srcnodeid="14" srcpinname="X">
+   </LINK>
+   <LINK dstnodeid="14" dstpinname="XY" linkstyle="Bezier" srcnodeid="3" srcpinname="Y Output Value">
+   <LINKPOINT x="1560" y="7238">
+   </LINKPOINT>
+   <LINKPOINT x="11715" y="7238">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="11" dstpinname="Height" srcnodeid="14" srcpinname="Y">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Texture Out" dstnodeid="13" dstpinname="Input Node">
+   </LINK>
+   </PATCH>
