@@ -62,12 +62,12 @@
    </LINK>
    <LINK dstnodeid="1" dstpinname="Texture" srcnodeid="7" srcpinname="Texture Out">
    </LINK>
-   <NODE componentmode="Hidden" filename="..\Common\Output\Projectors (Fullscreenx6).v4p" id="9" nodename="Projectors (Fullscreenx6)" systemname="Projectors (Fullscreenx6)">
+   <NODE border="1" componentmode="Hidden" filename="..\Common\Output\Projectors (Fullscreenx6).v4p" id="9" nodename="Projectors (Fullscreenx6)" systemname="Projectors (Fullscreenx6)">
    <BOUNDS height="100" left="720" top="3645" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
-   <BOUNDS height="11550" left="7890" top="4890" type="Window" width="14295">
+   <BOUNDS height="12030" left="1800" top="12375" type="Window" width="14295">
    </BOUNDS>
    </NODE>
    <LINK dstnodeid="9" dstpinname="Layers" srcnodeid="2" srcpinname="Layer">
@@ -101,25 +101,27 @@
    </PIN>
    <PIN pinname="Lightness" slicecount="1" values="0.5">
    </PIN>
+   <PIN pinname="Hue" slicecount="1" values="0.5">
+   </PIN>
    </NODE>
    <LINK dstnodeid="1" dstpinname="Color" srcnodeid="12" srcpinname="Output">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="13" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Node" left="3405" top="615" width="0" height="0">
+   <NODE componentmode="InABox" id="13" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="3405" top="615" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="3405" top="615" width="795" height="240">
+   <BOUNDS height="240" left="3405" top="615" type="Box" width="795">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="3">
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Precision" slicecount="1" values="4">
    </PIN>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="ViewSelection" encoded="0">
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="ViewSelection">
    </PIN>
    </NODE>
-   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="3" dstpinname="ViewSelection">
+   <LINK dstnodeid="3" dstpinname="ViewSelection" srcnodeid="13" srcpinname="Y Output Value">
    </LINK>
    </PATCH>
