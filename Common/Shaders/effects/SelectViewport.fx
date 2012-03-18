@@ -35,6 +35,8 @@ sampler SampNoFilter = sampler_state    //sampler for doing the texture-lookup
     MipFilter = NONE;         //sampler states
     MinFilter = NONE;
     MagFilter = NONE;
+	AddressU = BORDER;
+	AddressV = BORDER;
 };
 
 float4x4 tTex: TEXTUREMATRIX <string uiname="Texture Transform";>;
@@ -66,6 +68,24 @@ vs2ps VS(
     Out.TexCd = mul(TexCd, tTex);
 
 	Out.Pos *= (ViewSelection == ViewIndex);
+    return Out;
+}
+
+vs2ps VSx2(
+    float4 Pos : POSITION,
+    float4 TexCd : TEXCOORD0)
+{
+    //inititalize all fields of output struct with 0
+    vs2ps Out = (vs2ps)0;
+
+    //transform position
+    Out.Pos = mul(Pos, tWVP);
+
+    //transform texturecoordinates
+    Out.TexCd = mul(TexCd, tTex);
+
+	Out.Pos *= (ViewSelection == ViewIndex);
+	Out.Pos.xy *= 2.0f;
     return Out;
 }
 
@@ -109,6 +129,16 @@ technique TNoFilter
     {
         //Wrap0 = U;  // useful when mesh is round like a sphere
         VertexShader = compile vs_2_0 VS();
+        PixelShader = compile ps_2_0 PSNoFilter();
+    }
+}
+
+technique TNoFilterx2
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_2_0 VSx2();
         PixelShader = compile ps_2_0 PSNoFilter();
     }
 }
