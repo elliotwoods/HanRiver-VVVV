@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.1.dtd" >
    <PATCH nodename="C:\vvvv\HanRiver-VVVV\Common\Output\Projectors (EyeFinity Windowed).v4p" filename="C:\vvvv\HanRiver-VVVV\Common\Output\Projectors (EyeFinity Windowed).v4p" systemname="Projectors (EyeFinity Windowed)">
-   <BOUNDS height="11040" left="2895" top="13470" type="Window" width="14070">
+   <BOUNDS height="11040" left="3435" top="15750" type="Window" width="14070">
    </BOUNDS>
    <NODE border="0" componentmode="InAWindow" id="0" nodename="Renderer (EX9)" stayontop="0" systemname="Renderer (EX9)">
    <BOUNDS height="270" left="1515" top="6135" type="Node" width="3945">
@@ -192,24 +192,6 @@
    <PIN pinname="ID" pintype="Output" visible="-1">
    </PIN>
    </NODE>
-   <NODE componentmode="Hidden" filename="plugins\WindowsSetWindowShape\WindowsSetWindowShape.csproj" id="13" nodename="SetWindowShape (Windows)" systemname="SetWindowShape (Windows)">
-   <BOUNDS height="270" left="1845" top="3570" type="Node" width="4995">
-   </BOUNDS>
-   <PIN pinname="Width" visible="1">
-   </PIN>
-   <PIN pinname="Handle" visible="1">
-   </PIN>
-   <PIN pinname="Apply" visible="1">
-   </PIN>
-   <PIN pinname="X">
-   </PIN>
-   <PIN pinname="Y">
-   </PIN>
-   <PIN pinname="Height" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="13" dstpinname="Handle" srcnodeid="6" srcpinname="Y Output Value">
-   </LINK>
    <NODE componentmode="InABox" id="14" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="0" left="6765" top="2250" type="Node" width="0">
    </BOUNDS>
@@ -256,8 +238,6 @@
    <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
    </PIN>
    </NODE>
-   <LINK dstnodeid="13" dstpinname="X" srcnodeid="15" srcpinname="Y Output Value">
-   </LINK>
    <NODE componentmode="InABox" id="16" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="0" left="2835" top="2475" type="Node" width="0">
    </BOUNDS>
@@ -278,8 +258,6 @@
    <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
    </PIN>
    </NODE>
-   <LINK dstnodeid="13" dstpinname="Y" srcnodeid="16" srcpinname="Y Output Value">
-   </LINK>
    <NODE componentmode="InABox" id="18" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="0" left="3840" top="2475" type="Node" width="0">
    </BOUNDS>
@@ -302,8 +280,6 @@
    <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
    </PIN>
    </NODE>
-   <LINK dstnodeid="13" dstpinname="Width" srcnodeid="18" srcpinname="Y Output Value">
-   </LINK>
    <NODE componentmode="InABox" id="19" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="0" left="4815" top="2475" type="Node" width="0">
    </BOUNDS>
@@ -326,8 +302,6 @@
    <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
    </PIN>
    </NODE>
-   <LINK dstnodeid="13" dstpinname="Height" srcnodeid="19" srcpinname="Y Output Value">
-   </LINK>
    <NODE componentmode="InABox" id="20" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="0" left="1515" top="270" type="Node" width="0">
    </BOUNDS>
@@ -358,8 +332,6 @@
    <PIN pinname="Input 2" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="13" dstpinname="Apply" srcnodeid="22" srcpinname="Output">
-   </LINK>
    <LINK dstnodeid="22" dstpinname="Input 1" srcnodeid="14" srcpinname="Y Output Value">
    </LINK>
    <LINK dstnodeid="22" dstpinname="Input 2" srcnodeid="21" srcpinname="Bang">
@@ -601,9 +573,9 @@
    </PIN>
    <PIN pinname="Rows" slicecount="1" values="2">
    </PIN>
+   <PIN pinname="Y Input Value">
+   </PIN>
    </NODE>
-   <LINK dstnodeid="44" dstpinname="Y Input Value" srcnodeid="13" srcpinname="Success">
-   </LINK>
    <NODE componentmode="Hidden" id="45" nodename="Timing (Debug)" systemname="Timing (Debug)">
    <BOUNDS height="100" left="9360" top="3150" type="Node" width="100">
    </BOUNDS>
@@ -650,10 +622,6 @@
    </NODE>
    <LINK dstnodeid="46" dstpinname="Y Input Value" srcnodeid="45" srcpinname="frames per second">
    </LINK>
-   <NODE componentmode="Hidden" filename="plugins\WindowsSetWindowShape\WindowsSetWindowShape.csproj" id="47" nodename="SetWindowShape (Windows)" systemname="SetWindowShape (Windows)">
-   <BOUNDS height="100" left="5745" top="3960" type="Node" width="100">
-   </BOUNDS>
-   </NODE>
    <NODE componentmode="Hidden" filename="%VVVV%\lib\nodes\modules\EX9\MultiViewport (EX9).v4p" id="39" nodename="MultiViewport (EX9)" systemname="MultiViewport (EX9)">
    <BOUNDS height="100" left="8685" top="5565" type="Node" width="100">
    </BOUNDS>
@@ -695,5 +663,35 @@
    </LINKPOINT>
    <LINKPOINT x="5040" y="5970">
    </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" filename="plugins\WindowsSetWindowShape\WindowsSetWindowShape.csproj" id="13" nodename="SetWindowShape (Windows)" systemname="SetWindowShape (Windows)">
+   <BOUNDS height="270" left="1845" top="3570" type="Node" width="4995">
+   </BOUNDS>
+   <PIN pinname="Width" visible="1">
+   </PIN>
+   <PIN pinname="Handle" visible="1">
+   </PIN>
+   <PIN pinname="Apply" visible="1">
+   </PIN>
+   <PIN pinname="X">
+   </PIN>
+   <PIN pinname="Y">
+   </PIN>
+   <PIN pinname="Height" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="13" dstpinname="Handle" srcnodeid="6" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="13" dstpinname="X" srcnodeid="15" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="13" dstpinname="Y" srcnodeid="16" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="13" dstpinname="Width" srcnodeid="18" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="13" dstpinname="Height" srcnodeid="19" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="13" dstpinname="Apply" srcnodeid="22" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="44" dstpinname="Y Input Value" srcnodeid="13" srcpinname="Success">
    </LINK>
    </PATCH>

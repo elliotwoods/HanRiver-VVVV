@@ -10,6 +10,10 @@
 // PIXELSHADERS:
 // --------------------------------------------------------------------------------------------------
 
+float4 PSFillProjector(vs2ps In) : COLOR
+{
+	return 1;
+}
 
 float4 PSActive(vs2ps In): COLOR
 {
@@ -33,6 +37,15 @@ float4 PSAxis(vs2ps In): COLOR
 	Pixel pixel = ReadPixel(In);
 	float4 col;
 	col.rgb = abs(pixel.raw) < 0.05;
+    col.a = Alpha * pixel.active;
+    return col;
+}
+
+float4 PSFill(vs2ps In) : COLOR
+{
+	Pixel pixel = ReadPixel(In);
+	float4 col;
+	col.rgb = pixel.color;
     col.a = Alpha * pixel.active;
     return col;
 }
@@ -76,6 +89,15 @@ float4 PSVolumeSample(vs2ps In) : COLOR
 // TECHNIQUES:
 // --------------------------------------------------------------------------------------------------
 
+technique TFillProjector
+{
+    pass P0
+    {
+        VertexShader = compile vs_2_0 VSViewSelect();
+        PixelShader = compile ps_2_0 PSFillProjector();
+    }
+}
+
 technique TShowActive
 {
     pass P0
@@ -100,6 +122,15 @@ technique TAxis
     {
         VertexShader = compile vs_2_0 VSViewSelect();
         PixelShader = compile ps_2_0 PSAxis();
+    }
+}
+
+technique TFill
+{
+    pass P0
+    {
+        VertexShader = compile vs_2_0 VSViewSelect();
+        PixelShader = compile ps_2_0 PSFill();
     }
 }
 
