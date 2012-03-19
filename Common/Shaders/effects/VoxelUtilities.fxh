@@ -31,23 +31,6 @@ float4x4 gradient;
 //
 ////
 
-
-////
-//animation
-float time;
-float wavelength = 0.3; //scale of wave
-float frequency = 1.0f; //speed of wave
-float amplitude = 0.3f;
-//
-////
-
-
-////
-//volume
-int volumeResolution = 32;
-//
-////
-
 // --------------------------------------------------------------------------------------------------
 // UTILITIES:
 // --------------------------------------------------------------------------------------------------
@@ -70,11 +53,8 @@ Pixel ReadPixel(vs2ps In) {
 	xyzw = mul(position, tWorldInverse);
 	pixel.xyz = xyzw.xyz;
 	float gradientposition = clamp(mul(xyzw, gradient).z, 0, 1);
+	color1 = clamp(color1, 0, 1);
+	color2 = clamp(color2, 0, 1);
 	pixel.color = lerp(color1, color2, gradientposition);
 	return pixel;
-}
-
-float Wave(float position)
-{
-	return (position < 0) * (1.0f + position / thickness);
 }

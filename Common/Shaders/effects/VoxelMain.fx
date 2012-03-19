@@ -5,42 +5,12 @@
 #include "ViewSelect.fxh"
 #include "VoxelUtilities.fxh"
 #include "VolumeUtilities.fxh"
+#include "WaveUtilities.fxh"
+#include "DebugTechniques.fxh"
 
 // --------------------------------------------------------------------------------------------------
 // PIXELSHADERS:
 // --------------------------------------------------------------------------------------------------
-
-float4 PSFillProjector(vs2ps In) : COLOR
-{
-	return 1;
-}
-
-float4 PSActive(vs2ps In): COLOR
-{
-	Pixel pixel = ReadPixel(In);
-	float4 col = pixel.active;
-    col.a *= Alpha;
-    return col;
-}
-
-float4 PSPassthrough(vs2ps In): COLOR
-{
-	Pixel pixel = ReadPixel(In);
-	float4 col;
-	col.rgb = pixel.raw;
-    col.a = Alpha * pixel.active;
-    return col;
-}
-
-float4 PSAxis(vs2ps In): COLOR
-{
-	Pixel pixel = ReadPixel(In);
-	float4 col;
-	col.rgb = abs(pixel.raw) < 0.05;
-    col.a = Alpha * pixel.active;
-    return col;
-}
-
 float4 PSFill(vs2ps In) : COLOR
 {
 	Pixel pixel = ReadPixel(In);
@@ -80,7 +50,7 @@ float4 PSSurfaceWave(vs2ps In) : COLOR
 float4 PSVolumeSample(vs2ps In) : COLOR
 {
 	Pixel pixel = ReadPixel(In);
-	float4 col  = VolumeLookup(pixel) * pixel.color;
+	float4 col  = lerp(color1, color2, length(VolumeLookup(pixel).rgb));
     col.a = Alpha * pixel.active;
     return col;	
 }
@@ -88,43 +58,6 @@ float4 PSVolumeSample(vs2ps In) : COLOR
 // --------------------------------------------------------------------------------------------------
 // TECHNIQUES:
 // --------------------------------------------------------------------------------------------------
-
-technique TFillProjector
-{
-    pass P0
-    {
-        VertexShader = compile vs_2_0 VSViewSelect();
-        PixelShader = compile ps_2_0 PSFillProjector();
-    }
-}
-
-technique TShowActive
-{
-    pass P0
-    {
-        VertexShader = compile vs_2_0 VSViewSelect();
-        PixelShader = compile ps_2_0 PSActive();
-    }
-}
-
-technique TPassthrough
-{
-    pass P0
-    {
-        VertexShader = compile vs_2_0 VSViewSelect();
-        PixelShader = compile ps_2_0 PSPassthrough();
-    }
-}
-
-technique TAxis
-{
-    pass P0
-    {
-        VertexShader = compile vs_2_0 VSViewSelect();
-        PixelShader = compile ps_2_0 PSAxis();
-    }
-}
-
 technique TFill
 {
     pass P0

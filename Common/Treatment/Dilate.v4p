@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.1.dtd" >
    <PATCH nodename="C:\vvvv\HanRiver-VVVV\Common\Treatment\Dilate.v4p" filename="C:\vvvv\HanRiver-VVVV\Common\Treatment\Dilate.v4p" systemname="Dilate">
-   <BOUNDS height="6000" left="7410" top="15465" type="Window" width="9000">
+   <BOUNDS height="10920" left="7410" top="12135" type="Window" width="9000">
    </BOUNDS>
    <NODE componentmode="InABox" id="0" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="100" left="1890" top="285" type="Node" width="100">
@@ -62,10 +62,10 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE componentmode="Hidden" id="5" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
+   <NODE componentmode="InABox" id="5" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
    <BOUNDS height="270" left="1065" top="2175" type="Node" width="4605">
    </BOUNDS>
-   <BOUNDS height="1800" left="1065" top="2175" type="Box" width="2400">
+   <BOUNDS height="5055" left="1065" top="2175" type="Box" width="4575">
    </BOUNDS>
    <BOUNDS height="8985" left="735" top="12735" type="Window" width="6240">
    </BOUNDS>
@@ -109,7 +109,7 @@
    <LINK dstnodeid="5" dstpinname="Background Color" srcnodeid="6" srcpinname="Output">
    </LINK>
    <NODE componentmode="Hidden" id="7" nodename="DX9Texture (EX9.Texture)" systemname="DX9Texture (EX9.Texture)">
-   <BOUNDS height="100" left="4725" top="3165" type="Node" width="100">
+   <BOUNDS height="100" left="4725" top="8115" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Source" visible="1">
    </PIN>
@@ -119,9 +119,9 @@
    <LINK dstnodeid="7" dstpinname="Source" srcnodeid="5" srcpinname="EX9 Out">
    </LINK>
    <NODE componentmode="InABox" id="8" nodename="IOBox (Enumerations)" systemname="IOBox (Enumerations)">
-   <BOUNDS height="0" left="4725" top="2730" type="Node" width="0">
+   <BOUNDS height="0" left="4725" top="7680" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="240" left="4725" top="2730" type="Box" width="1590">
+   <BOUNDS height="240" left="4725" top="7680" type="Box" width="1590">
    </BOUNDS>
    <PIN pinname="Input Enum" slicecount="1" values="A32B32G32R32F">
    </PIN>
@@ -129,9 +129,9 @@
    <LINK dstnodeid="7" dstpinname="Format" srcnodeid="8" srcpinname="Output Enum">
    </LINK>
    <NODE componentmode="InABox" id="9" nodename="IOBox (Node)" systemname="IOBox (Node)">
-   <BOUNDS height="0" left="4725" top="3855" type="Node" width="0">
+   <BOUNDS height="0" left="4725" top="8805" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="240" left="4725" top="3855" type="Box" width="795">
+   <BOUNDS height="240" left="4725" top="8805" type="Box" width="795">
    </BOUNDS>
    <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Texture Out|">
    </PIN>
@@ -180,17 +180,17 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="MonoFlop (Animation)" nodename="MonoFlop (Animation)" componentmode="Hidden" id="12">
-   <BOUNDS type="Node" left="6315" top="1065" width="100" height="100">
+   <NODE componentmode="Hidden" id="12" nodename="MonoFlop (Animation)" systemname="MonoFlop (Animation)">
+   <BOUNDS height="100" left="6315" top="1065" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Set" visible="1">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="11" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Set">
+   <LINK dstnodeid="12" dstpinname="Set" srcnodeid="11" srcpinname="Y Output Value">
    </LINK>
-   <LINK srcnodeid="12" srcpinname="Output" dstnodeid="5" dstpinname="Enabled" linkstyle="VHV">
+   <LINK dstnodeid="5" dstpinname="Enabled" linkstyle="VHV" srcnodeid="12" srcpinname="Output">
    <LINKPOINT x="6345" y="2025">
    </LINKPOINT>
    <LINKPOINT x="4125" y="2025">

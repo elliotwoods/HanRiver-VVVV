@@ -1,3 +1,5 @@
+int volumeResolution = 32;
+
 texture TexV <string uiname="Volume texture";>;
 sampler SampVolume = sampler_state    //sampler for doing the texture-lookup
 {

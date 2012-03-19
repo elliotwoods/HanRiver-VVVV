@@ -10,20 +10,8 @@ using VVVV.Utils.VMath;
 using VVVV.Core.Logging;
 #endregion usings
 
-namespace VVVV.Nodes
+namespace VVVV.Nodes.VoxelProperties
 {
-	struct SurfaceProperties
-	{
-		double Thickness;
-	}
-	struct ColorProperties
-	{
-		RGBAColor Color1;
-		RGBAColor Color2;
-		double Alpha;
-		Vector2D GradientRotation;
-		double GradientPosition;
-	}
 	struct WaveProperties
 	{
 		double Wavelength;
@@ -46,9 +34,7 @@ namespace VVVV.Nodes
 		public WaveProperties Wave;
 	}
 	
-	#region PluginInfo
 	[PluginInfo(Name = "Pack", Category = "VoxelProperties")]
-	#endregion PluginInfo
 	public class VoxelPropertiesPackNode : IPluginEvaluate
 	{
 		#region fields & pins
@@ -91,9 +77,7 @@ namespace VVVV.Nodes
 		}
 	}
 	
-		#region PluginInfo
 	[PluginInfo(Name = "Unpack", Category = "VoxelProperties")]
-	#endregion PluginInfo
 	public class VoxelPropertiesUnackNode : IPluginEvaluate
 	{
 		#region fields & pins
