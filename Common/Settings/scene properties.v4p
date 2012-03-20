@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.1.dtd" >
-   <PATCH nodename="C:\vvvv\HanRiver-VVVV\Common\Settings\scene properties.v4p" filename="C:\vvvv\HanRiver-VVVV\Common\Settings\scene properties.v4p" systemname="scene properties">
-   <BOUNDS height="7500" left="4545" top="13635" type="Window" width="13755">
+   <PATCH nodename="C:\vvvv\HanRiver-VVVV\Common\Settings\scene properties.v4p" filename="C:\vvvv\HanRiver-VVVV\Common\Settings\scene properties.v4p" systemname="scene properties" locked="0">
+   <BOUNDS height="7500" left="4470" top="14835" type="Window" width="13755">
    </BOUNDS>
    <NODE componentmode="InABox" id="0" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="0" left="975" top="5235" type="Node" width="0">
@@ -25,7 +25,7 @@
    <NODE componentmode="Hidden" filename="..\..\opencv\plugins\VVVV.Nodes.FreeImage.dll" id="11" nodename="ImageLoad (OpenCV FreeImage)" systemname="ImageLoad (OpenCV FreeImage)">
    <BOUNDS height="100" left="4260" top="2025" type="Node" width="100">
    </BOUNDS>
-   <PIN encoded="0" pinname="Filename" slicecount="1" values="..\..\..\..\openFrameworks\apps\HanRiver-openFrameworks\tool23-find3dProjectorPixels\bin\data\bigmap.exr">
+   <PIN encoded="0" pinname="Filename">
    </PIN>
    <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
@@ -241,7 +241,7 @@
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="3" values="3.51,-1.05,-1.55">
+   <PIN pinname="Y Input Value" slicecount="3" values="3.51,-1.05,-1.45">
    </PIN>
    <PIN pinname="Vector Size" slicecount="1" values="3">
    </PIN>
@@ -491,9 +491,31 @@
    </PIN>
    <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Reload map|" encoded="0">
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Reload map|">
    </PIN>
    </NODE>
    <LINK dstnodeid="33" dstpinname="Input 2" srcnodeid="34" srcpinname="Y Output Value">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="35" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="0" top="1380" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="0" top="1380" width="3615" height="315">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="..\..\..\..\openFrameworks\apps\HanRiver-openFrameworks\Draft1-scanAndProcess\data\bigmap1.exr" encoded="0">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="|All Files (*.*)||*.*|" encoded="0">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Filename">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="Output String" dstnodeid="11" dstpinname="Filename" linkstyle="VHV">
+   <LINKPOINT x="60" y="1845">
+   </LINKPOINT>
+   <LINKPOINT x="4260" y="1845">
+   </LINKPOINT>
    </LINK>
    </PATCH>
