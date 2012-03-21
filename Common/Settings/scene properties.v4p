@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.1.dtd" >
-   <PATCH nodename="C:\vvvv\HanRiver-VVVV\Common\Settings\scene properties.v4p" filename="C:\vvvv\HanRiver-VVVV\Common\Settings\scene properties.v4p" systemname="scene properties" locked="0">
+   <PATCH nodename="C:\vvvv\HanRiver-VVVV\Common\Settings\scene properties.v4p" filename="C:\vvvv\HanRiver-VVVV\Common\Settings\scene properties.v4p" locked="0" systemname="scene properties">
    <BOUNDS height="7500" left="4470" top="14835" type="Window" width="13755">
    </BOUNDS>
    <NODE componentmode="InABox" id="0" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
@@ -421,30 +421,26 @@
    <LINK dstnodeid="4" dstpinname="Enabled" srcnodeid="2" srcpinname="Output">
    </LINK>
    <NODE componentmode="Hidden" id="29" nodename="OnOpen (VVVV)" systemname="OnOpen (VVVV)">
-   <BOUNDS height="100" left="3840" top="165" type="Node" width="100">
+   <BOUNDS height="100" left="5340" top="165" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Bang" visible="1">
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="30" nodename="MonoFlop (Animation)" systemname="MonoFlop (Animation)">
-   <BOUNDS height="100" left="3840" top="510" type="Node" width="100">
+   <BOUNDS height="100" left="5340" top="510" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Set" visible="1">
    </PIN>
    <PIN pinname="Inverse Output" visible="1">
    </PIN>
-   </NODE>
-   <NODE componentmode="Hidden" id="31" nodename="TogEdge (Animation)" systemname="TogEdge (Animation)">
-   <BOUNDS height="100" left="4680" top="1005" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="Up Edge" visible="1">
+   <PIN pinname="Reset" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Time" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
    <LINK dstnodeid="30" dstpinname="Set" srcnodeid="29" srcpinname="Bang">
-   </LINK>
-   <LINK dstnodeid="31" dstpinname="Input" srcnodeid="30" srcpinname="Inverse Output">
    </LINK>
    <LINK dstnodeid="20" dstpinname="Input Value" srcnodeid="4" srcpinname="Texture Out">
    </LINK>
@@ -472,8 +468,6 @@
    <PIN pinname="Input 2" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="33" dstpinname="Input 1" srcnodeid="31" srcpinname="Up Edge">
-   </LINK>
    <LINK dstnodeid="11" dstpinname="Reload" srcnodeid="33" srcpinname="Output">
    </LINK>
    <NODE componentmode="InABox" id="34" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
@@ -496,26 +490,50 @@
    </NODE>
    <LINK dstnodeid="33" dstpinname="Input 2" srcnodeid="34" srcpinname="Y Output Value">
    </LINK>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="35" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="0" top="1380" width="0" height="0">
+   <NODE componentmode="InABox" id="35" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="0" left="0" top="1380" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="0" top="1380" width="3615" height="315">
+   <BOUNDS height="315" left="0" top="1380" type="Box" width="3615">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" values="..\..\..\..\openFrameworks\apps\HanRiver-openFrameworks\Draft1-scanAndProcess\data\bigmap1.exr" encoded="0">
+   <PIN encoded="0" pinname="Input String" slicecount="1" values="..\..\..\..\openFrameworks\apps\HanRiver-openFrameworks\Draft1-scanAndProcess\data\bigmap1.exr">
    </PIN>
-   <PIN pinname="Default" slicecount="1" values="||" encoded="0">
+   <PIN encoded="0" pinname="Default" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="File Mask" slicecount="1" values="|All Files (*.*)||*.*|" encoded="0">
+   <PIN encoded="0" pinname="File Mask" slicecount="1" values="|All Files (*.*)||*.*|">
    </PIN>
    <PIN pinname="Maximum Characters" slicecount="1" values="-1">
    </PIN>
    <PIN pinname="String Type" slicecount="1" values="Filename">
    </PIN>
    </NODE>
-   <LINK srcnodeid="35" srcpinname="Output String" dstnodeid="11" dstpinname="Filename" linkstyle="VHV">
+   <LINK dstnodeid="11" dstpinname="Filename" linkstyle="VHV" srcnodeid="35" srcpinname="Output String">
    <LINKPOINT x="60" y="1845">
    </LINKPOINT>
    <LINKPOINT x="4260" y="1845">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="36">
+   <BOUNDS type="Node" left="4335" top="510" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Period" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Change" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="37">
+   <BOUNDS type="Node" left="4680" top="930" width="735" height="270">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="36" srcpinname="Change" dstnodeid="37" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="30" srcpinname="Output" dstnodeid="37" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Output" dstnodeid="33" dstpinname="Input 1">
    </LINK>
    </PATCH>

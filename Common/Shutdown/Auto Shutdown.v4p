@@ -1,0 +1,285 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.1.dtd" >
+   <PATCH nodename="C:\vvvv\HanRiver-VVVV\Common\Shutdown\Auto Shutdown.v4p" filename="C:\vvvv\HanRiver-VVVV\Common\Shutdown\Auto Shutdown.v4p" systemname="Auto Shutdown">
+   <BOUNDS height="7005" left="3060" top="15465" type="Window" width="7965">
+   </BOUNDS>
+   <NODE componentmode="Hidden" id="0" nodename="Shutdown (Windows)" systemname="Shutdown (Windows)">
+   <BOUNDS height="100" left="1545" top="4890" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Do it" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="1" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="990" top="3795" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="480" left="990" top="3795" type="Box" width="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Block shutdown|">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="2" nodename="OnOpen (VVVV)" systemname="OnOpen (VVVV)">
+   <BOUNDS height="100" left="1020" top="1050" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Bang" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="3" nodename="Keyboard (System Global)" systemname="Keyboard (System Global)">
+   <BOUNDS height="100" left="3030" top="1065" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Keyboard Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="4" nodename="KeyMatch (String)" systemname="KeyMatch (String)">
+   <BOUNDS height="100" left="3030" top="1560" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Key Match" slicecount="1" values="&lt;SHIFT&gt;">
+   </PIN>
+   <PIN pinname="&lt;SHIFT&gt; Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Input" srcnodeid="3" srcpinname="Keyboard Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="5" nodename="MonoFlop (Animation)" systemname="MonoFlop (Animation)">
+   <BOUNDS height="100" left="1020" top="1455" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Inverse Output" visible="1">
+   </PIN>
+   <PIN pinname="Time">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="5" dstpinname="Set" srcnodeid="2" srcpinname="Bang">
+   </LINK>
+   <NODE componentmode="Hidden" id="7" nodename="AND (Boolean)" systemname="AND (Boolean)">
+   <BOUNDS height="270" left="1005" top="2640" type="Node" width="2085">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Input 2" srcnodeid="4" srcpinname="&lt;SHIFT&gt; Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="8" nodename="FlipFlop (Animation)" systemname="FlipFlop (Animation)">
+   <BOUNDS height="100" left="990" top="3135" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="8" dstpinname="Set" srcnodeid="7" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="1" dstpinname="Y Input Value" srcnodeid="8" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" filename="%VVVV%\addonpack\lib\nodes\plugins\Date.dll" id="10" nodename="Date (Astronomy)" systemname="Date (Astronomy)">
+   <BOUNDS height="100" left="5160" top="1950" type="Node" width="100">
+   </BOUNDS>
+   <PIN encoded="0" pinname="CultureInfo" slicecount="1" values="en-US">
+   </PIN>
+   <PIN encoded="0" pinname="Formate" slicecount="1" values="HH">
+   </PIN>
+   <PIN pinname="Current Date" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="11" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="0" left="5160" top="2490" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="5160" top="2490" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN encoded="0" pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Hour">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="11" dstpinname="Input String" srcnodeid="10" srcpinname="Current Date">
+   </LINK>
+   <NODE componentmode="Hidden" filename="%VVVV%\addonpack\lib\nodes\plugins\Date.dll" id="12" nodename="Date (Astronomy)" systemname="Date (Astronomy)">
+   <BOUNDS height="100" left="6210" top="1950" type="Node" width="100">
+   </BOUNDS>
+   <PIN encoded="0" pinname="CultureInfo" slicecount="1" values="en-US">
+   </PIN>
+   <PIN encoded="0" pinname="Formate" slicecount="1" values="mm">
+   </PIN>
+   <PIN pinname="Current Date" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Minute">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="13" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="0" left="6210" top="2490" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="6210" top="2490" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN encoded="0" pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Minute">
+   </PIN>
+   <PIN pinname="Input String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="13" dstpinname="Input String" srcnodeid="12" srcpinname="Current Date">
+   </LINK>
+   <NODE componentmode="Hidden" id="15" nodename="AsValue (String)" systemname="AsValue (String)">
+   <BOUNDS height="100" left="4350" top="2475" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="15" dstpinname="Input" linkstyle="VHV" srcnodeid="10" srcpinname="Current Date">
+   <LINKPOINT x="5160" y="2333">
+   </LINKPOINT>
+   <LINKPOINT x="4410" y="2333">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" id="14" nodename="GE (Value)" systemname="GE (Value)">
+   <BOUNDS height="270" left="4350" top="3780" type="Node" width="870">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="14" dstpinname="Input 1" srcnodeid="15" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="InABox" id="17" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="5175" top="3105" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="5175" top="3105" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="18">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="h">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Shutdown hour|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="14" dstpinname="Input 2" srcnodeid="17" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="Hidden" id="18" nodename="NOT (Boolean)" systemname="NOT (Boolean)">
+   <BOUNDS height="100" left="3360" top="3780" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="18" dstpinname="Input" linkstyle="VHV" srcnodeid="8" srcpinname="Output">
+   <LINKPOINT x="1325" y="3578">
+   </LINKPOINT>
+   <LINKPOINT x="3085" y="3578">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" id="19" nodename="AND (Boolean)" systemname="AND (Boolean)">
+   <BOUNDS height="270" left="2325" top="4335" type="Node" width="2100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Input 1" srcnodeid="5" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="InABox" id="20" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="1590" top="435" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="1590" top="435" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="3">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="s">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="5" dstpinname="Time" srcnodeid="20" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="21" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="270" left="690" top="435" type="Node" width="855">
+   </BOUNDS>
+   <BOUNDS height="270" left="690" top="435" type="Box" width="855">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Input String" slicecount="1" visible="0" values="|//for first|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="22" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="270" left="2445" top="435" type="Node" width="4680">
+   </BOUNDS>
+   <BOUNDS height="270" left="2445" top="435" type="Box" width="4680">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Input String" slicecount="1" visible="0" values="|pressing any key will block shutdown until we restart the patch|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="19" dstpinname="Input 3" srcnodeid="14" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="19" dstpinname="Input 2" srcnodeid="18" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="19" dstpinname="Input 1" linkstyle="Bezier" srcnodeid="5" srcpinname="Inverse Output">
+   <LINKPOINT x="1875" y="3030">
+   </LINKPOINT>
+   <LINKPOINT x="2340" y="3030">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="0" dstpinname="Do it">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="23" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="2580" top="3105" width="2610" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2580" top="3105" width="2610" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|//otherwise we will shutdown after|" encoded="0">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   </PATCH>

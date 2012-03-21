@@ -1,0 +1,169 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.1.dtd" >
+   <PATCH nodename="c:\vvvv\HanRiver-VVVV\Common\Output\Projectors (Fullscreen 5of6).v4p" filename="C:\vvvv\HanRiver-VVVV\Common\Output\Projectors (Fullscreenx6).v4p" systemname="Projectors (Fullscreenx6)">
+   <BOUNDS height="5310" left="1485" top="14790" type="Window" width="14460">
+   </BOUNDS>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="FullScreen" id="78">
+   <BOUNDS type="Node" left="885" top="3210" width="10545" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="885" top="3210" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="14445" top="17790" width="6240" height="5010">
+   </BOUNDS>
+   <PIN pinname="Layers" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transformations Index" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Viewport" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="AsDesktop">
+   </PIN>
+   <PIN pinname="Fullscreen" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="79" systemname="IOBox (Node)">
+   <BOUNDS type="Node" left="885" top="1935" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="885" top="1935" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Layers" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="79" srcpinname="Output Node" dstnodeid="78" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Timing (Debug)" nodename="Timing (Debug)" componentmode="Hidden" id="80">
+   <BOUNDS type="Node" left="960" top="3915" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Windows Time" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Timer Time" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Update View Time" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Prepare Graph Time" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Render Time" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Present Time" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Network Sync Time" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Debug Output Time" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Reset Cache Time" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Total Clock Filter Time" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Total Runnning Time" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Up Time" visible="-1" pintype="Output">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="81" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="945" top="4545" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="945" top="4545" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|frames per second|" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="80" srcpinname="frames per second" dstnodeid="81" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="MultiViewport (EX9)" filename="%VVVV%\lib\nodes\modules\EX9\MultiViewport (EX9).v4p" nodename="MultiViewport (EX9)" componentmode="Hidden" id="82">
+   <BOUNDS type="Node" left="9900" top="1635" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Viewports" visible="1">
+   </PIN>
+   <PIN pinname="Screen Count Y" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Screen Count X" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="84">
+   <BOUNDS type="Node" left="11310" top="1425" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11310" top="1425" width="1875" height="495">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Columns" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="6" values="1,1,1,0,1,1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="6" values="1,1,1,0,1,1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Select (Node)" filename="%VVVV%\addonpack\lib\nodes\modules\Node\Select (Node).v4p" nodename="Select (Node)" componentmode="Hidden" id="85">
+   <BOUNDS type="Node" left="9915" top="2100" width="1470" height="270">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Select" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="82" srcpinname="Viewports" dstnodeid="85" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="84" srcpinname="Y Output Value" dstnodeid="85" dstpinname="Select">
+   </LINK>
+   <LINK srcnodeid="85" srcpinname="Output" dstnodeid="78" dstpinname="Viewport" linkstyle="Bezier">
+   <LINKPOINT x="9975" y="2790">
+   </LINKPOINT>
+   <LINKPOINT x="10410" y="2790">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="86">
+   <BOUNDS type="Node" left="11385" top="2475" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11385" top="2475" width="1740" height="585">
+   </BOUNDS>
+   <PIN pinname="Columns" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="5" values="2,3,4,0,1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="86" srcpinname="Y Output Value" dstnodeid="78" dstpinname="Transformations Index">
+   </LINK>
+   <NODE systemname="MonoFlop (Animation)" nodename="MonoFlop (Animation)" componentmode="Hidden" id="87">
+   <BOUNDS type="Node" left="4830" top="2550" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Inverse Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="OnOpen (VVVV)" nodename="OnOpen (VVVV)" componentmode="Hidden" id="88">
+   <BOUNDS type="Node" left="4815" top="2130" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Bang" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="88" srcpinname="Bang" dstnodeid="87" dstpinname="Set">
+   </LINK>
+   <LINK srcnodeid="87" srcpinname="Inverse Output" dstnodeid="78" dstpinname="Fullscreen">
+   </LINK>
+   </PATCH>

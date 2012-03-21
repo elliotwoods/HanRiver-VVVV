@@ -1,0 +1,3 @@
+Kommunikator
+° ° 0,1   DirectX Renderer
+° ° 2,3,4   DirectX Renderer
