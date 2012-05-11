@@ -2,6 +2,7 @@
 // VOXEL PARAMETERS
 // --------------------------------------------------------------------------------------------------
 
+
 texture TexXYZ <string uiname="XYZ";>;
 sampler SampNoFilter = sampler_state    //sampler for doing the texture-lookup
 {
@@ -28,6 +29,7 @@ float4 color1 : COLOR <String uiname="Color 1";>  = {1, 1, 1, 1};
 float4 color2 : COLOR <String uiname="Color 2";>  = {1, 0, 0, 1};
 float Alpha = 1;
 float4x4 gradient;
+float gamma = 1.0f;
 //
 ////
 
@@ -56,5 +58,6 @@ Pixel ReadPixel(vs2ps In) {
 	color1 = clamp(color1, 0, 1);
 	color2 = clamp(color2, 0, 1);
 	pixel.color = lerp(color1, color2, gradientposition);
+	pixel.color.rgb = pow(pixel.color.rgb, gamma);
 	return pixel;
 }

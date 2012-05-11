@@ -1,8 +1,8 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.1.dtd" >
    <PATCH nodename="C:\vvvv\HanRiver-VVVV\Common\Output\Projectors (Fullscreen 5of6).v4p" filename="C:\vvvv\HanRiver-VVVV\Common\Output\Projectors (Fullscreenx6).v4p" systemname="Projectors (Fullscreenx6)">
-   <BOUNDS height="4935" left="1485" top="14790" type="Window" width="14460">
+   <BOUNDS height="5325" left="1485" top="14790" type="Window" width="14460">
    </BOUNDS>
-   <NODE componentmode="Hidden" id="78" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
+   <NODE componentmode="InAWindow" id="78" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
    <BOUNDS height="270" left="885" top="2160" type="Node" width="10545">
    </BOUNDS>
    <BOUNDS height="1800" left="885" top="2160" type="Box" width="2400">
@@ -18,6 +18,8 @@
    <PIN pinname="Fullscreen Dimensions" slicecount="1" values="AsDesktop">
    </PIN>
    <PIN pinname="Fullscreen" visible="1">
+   </PIN>
+   <PIN pinname="Is Fullscreen" visible="1">
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="79" nodename="IOBox (Node)" systemname="IOBox (Node)">
@@ -167,5 +169,55 @@
    <LINK dstnodeid="87" dstpinname="Set" srcnodeid="88" srcpinname="Bang">
    </LINK>
    <LINK dstnodeid="78" dstpinname="Fullscreen" srcnodeid="87" srcpinname="Inverse Output">
+   </LINK>
+   <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="89">
+   <BOUNDS type="Node" left="7425" top="2805" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="OnChange" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="78" srcpinname="Is Fullscreen" dstnodeid="89" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="90" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="8130" top="3900" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8130" top="3900" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Change fullscreen|" encoded="0">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="MonoFlop (Animation)" nodename="MonoFlop (Animation)" componentmode="Hidden" id="91">
+   <BOUNDS type="Node" left="7410" top="3150" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="89" srcpinname="OnChange" dstnodeid="91" dstpinname="Set">
+   </LINK>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="92">
+   <BOUNDS type="Node" left="7410" top="3510" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Down Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="91" srcpinname="Output" dstnodeid="92" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="92" srcpinname="Down Edge" dstnodeid="90" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

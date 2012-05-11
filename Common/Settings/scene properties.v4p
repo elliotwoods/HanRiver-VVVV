@@ -512,16 +512,16 @@
    <LINKPOINT x="4260" y="1845">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="36">
-   <BOUNDS type="Node" left="4335" top="510" width="100" height="100">
+   <NODE componentmode="Hidden" id="36" nodename="LFO (Animation)" systemname="LFO (Animation)">
+   <BOUNDS height="100" left="4335" top="510" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Period" slicecount="1" values="3">
    </PIN>
    <PIN pinname="Change" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="37">
-   <BOUNDS type="Node" left="4680" top="930" width="735" height="270">
+   <NODE componentmode="Hidden" id="37" nodename="AND (Boolean)" systemname="AND (Boolean)">
+   <BOUNDS height="270" left="4680" top="930" type="Node" width="735">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -530,10 +530,34 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="36" srcpinname="Change" dstnodeid="37" dstpinname="Input 1">
+   <LINK dstnodeid="37" dstpinname="Input 1" srcnodeid="36" srcpinname="Change">
    </LINK>
-   <LINK srcnodeid="30" srcpinname="Output" dstnodeid="37" dstpinname="Input 2">
+   <LINK dstnodeid="37" dstpinname="Input 2" srcnodeid="30" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="37" srcpinname="Output" dstnodeid="33" dstpinname="Input 1">
+   <LINK dstnodeid="33" dstpinname="Input 1" srcnodeid="37" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="38" nodename="S (Value)" systemname="S (Value)">
+   <BOUNDS height="100" left="12975" top="7575" type="Node" width="100">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Send String" slicecount="1" values="scene.gamma">
+   </PIN>
+   <PIN pinname="Input Value">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="39" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="12975" top="7065" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="12975" top="7065" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.5">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Gamma">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="38" dstpinname="Input Value" srcnodeid="39" srcpinname="Y Output Value">
    </LINK>
    </PATCH>

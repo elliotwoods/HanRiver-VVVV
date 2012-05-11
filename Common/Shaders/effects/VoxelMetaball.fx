@@ -35,7 +35,7 @@ float4 PSMetaballs(vs2ps In): COLOR
 	density /= count;
 	float existence = (density > 1) * ((1.0f + thickness) - density) / thickness;
 	float4 output;
-	output.rgb = col;
+	output.rgb = pow(col, gamma);
 	output.a = existence * pixel.active * Alpha;
 	return output;
 }
